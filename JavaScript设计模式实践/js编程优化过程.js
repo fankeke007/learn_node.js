@@ -67,3 +67,6 @@ checkObject.prototype={
 		return this;
 	}
 }
+
+
+
