@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+	// 無代理
+			// var myImage = (function() {
+			//     var imgNode = document.createElement('img');
+			//     document.body.appendChild(imgNode);
+			//     return {
+			//         setSrc: function(src) {
+			//             imgNode.src = src;
+			//         }
+			//     }
+			// })();
+			// myImage.setSrc('http://img2.3lian.com/2014/c7/12/d/77.jpg');
+
+
+	// 有代理(代理的实现？)
+		var myImage = (function() {
+		    var imgNode = document.createElement('img');
+		    document.body.appendChild(imgNode);
+		    return {
+		        setSrc: function(src) {
+		            imgNode.src = src;
+		            imgNode.alt =" src";
+
+		        }
+		    }
+		})();
+		var proxyImage = (function() {
+		    var img = new Image;
+		    // document.body.appendChild(img);
+		    // img.alt="xxx2"
+		    img.onload = function() {
+		        // console.log(this);
+		        myImage.setSrc(this.src);
+		        alert("ok,大图片已加载完");
+		    }
+		    return {
+		        setSrc: function(src) {
+		            myImage.setSrc('http://c.hiphotos.baidu.com/zhidao/wh%3D600%2C800/sign=30a4b114ddf9d72a1731181be41a040c/f9198618367adab46005ce688fd4b31c8601e4c0.jpg');
+		            // console.log(myImage);
+		            img.src = src;
+		        }
+		    }
+		})();
+		proxyImage.setSrc('http://img2.3lian.com/2014/c7/12/d/77.jpg');
+
+
+	</script>
+</body>
+</html>
