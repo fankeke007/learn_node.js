@@ -93,4 +93,16 @@ SubClass.prototype.getName=function(){
 	console.log(this.name);
 };
 
+组合模式中调用了两边父类的构造函数。因而还不够完美。
+//洁净的继承者--原型式继承
+//原型式继承
+function inheritObject(o){
+	//声明一个过渡函数对象
+	function F(){};
+	//过渡对象的原型继承父对象
+	F.prototype=o;
+	//返回过渡对象的一个实例，该实例的原型继承了
+	retrun new F();
+}
+
 
