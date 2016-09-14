@@ -94,6 +94,7 @@ SubClass.prototype.getName=function(){
 };
 
 组合模式中调用了两边父类的构造函数。因而还不够完美。
+
 //洁净的继承者--原型式继承
 //原型式继承
 function inheritObject(o){
@@ -104,5 +105,40 @@ function inheritObject(o){
 	//返回过渡对象的一个实例，该实例的原型继承了
 	retrun new F();
 }
+此种模式是对类式继承的一个封装，类式继承的问题在这里也会出现。
 
+//如虎添翼--寄生式继承
+//寄生式继承
+//声明基对象
+var book={
+	name:"js book",
+	alikeBook:['css book','html book']
+};
+functon createBook(obj){
+	//通过原型继承方式创建新对象
+	var o=new inheritObject(obj);
+	//拓展新对象
+	o.getName=function(){
+		cosole.log(name);
+	};
+	//返回拓展后新对象
+	return o;
+}
+其实寄生式继承式对原型继承的第二次封装，并且在这第二次封装过程中对
+继承的对象进行了拓展，这样新创建的对象不仅继承了父类中的属性和方法
+而且还添加了新的属性继和方法。
 
+//终极的继承者--寄生组合式继承
+/**
+*寄生式继承 继承原型
+*传递参数 subClass 子类
+*传递参数 superClass 父类
+**/
+function inheritPrototype(subClass,superClass){
+	//复制一份父类的原型副本保存在变量中
+	var p=inheritObject(superClass.prototype);
+	//修复因为重写子类原型导致子类的constructor属性被修改
+	p.constructor=subClass;
+	//设置子类原型
+	subClass.prototype=p;
+}
