@@ -13,7 +13,7 @@
 });*/
 
 //添加jquery模块依赖
-define(['jquery'],function($){
+define(['widget','jquery','jqueryUI'],function(widget,$,$UI){
 	function Window(){
 		//设置默认值
 		this.cfg={
@@ -23,10 +23,17 @@ define(['jquery'],function($){
 			content:"",
 			handler:null,
 			hasCloseBtn:false,
-			hasMask:true
-		}
+			hasMask:true,
+			isDraggable:true,
+			dragHandle:null,
+			handler4AlertBtn:null,
+			handler4CloseBtn:null
+		};
+		this.handlers={};
 	}
-	Window.prototype={
+	//抽象出widget后此处修改如下
+		// Window.prototype={
+		Window.prototype=$.extend({},new widget.Widget(),{
 		// alert:function(content,handler,cfg){
 		// 	var boundingBox=$('<div class="window_boundingBox"></div>');
 		// 	boundingBox.appendTo("body");
@@ -64,7 +71,8 @@ define(['jquery'],function($){
 					'<div class="window_body">'+CFG.content+'</div>'+
 					'<div class="window_footer"><input type="button" value="确定"></div>'+'</div>'),
 				btn=boundingBox.find(".window_footer input"),
-				mask=null;
+				mask=null,
+				that=this;
 				if(CFG.hasMask){
 					var mask=$('<div class="window_mask"></div>');
 					mask.appendTo("body");
@@ -72,10 +80,13 @@ define(['jquery'],function($){
 				boundingBox.appendTo("body");
 			btn.click(function(){
 				//若handler存在这执行
-				CFG.handler&&CFG.handler();
+				// CFG.handler&&CFG.handler();//可放于自定义事件中来执行
 				//执行完handler之后销毁弹出框
 				boundingBox.remove();
-				mask.remove();
+				// 对不一下两行代码
+				mask.remove();/*mask && mask.remove()*//*后一种更好，避免不必要的函数执行*/
+				// 执行自定义事件
+				that.fire("alert");
 			});
 			//此处的this？
 			// $.extend(this.cfg,cfg);
@@ -86,20 +97,35 @@ define(['jquery'],function($){
 				top:(CFG.y||(window.innerHeight-CFG.height)/2)+"px"
 
 			});
+			if(CFG.isDraggable){
+				if(CFG.dragHandle){
+					boundingBox.draggable({handle:CFG.dragHandle});
+				}
+			};
 			if(CFG.hasCloseBtn){
 				var closeBtn=$('<span class="window_closeBtn">X</span>');
 				closeBtn.appendTo(boundingBox);
 				closeBtn.click(function(){
 					boundingBox.remove();
-					mask.remove();
+					mask&&mask.remove();
+					that.fire("close");
+
 				})
 			};
-			
+			if(CFG.handler4AlertBtn){
+				this.on("alert",CFG.handler4AlertBtn);
+			}
+			if(CFG.handler4CloseBtn){
+				this.on("close",CFG.handler4CloseBtn);
+			}
+
+			return this;
 		},
 
 		confirm:function(){},
 		prompt:function(){},
-	}
+
+	});
 	return{
 		Window:Window
 	}
