@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<div id="test01">我是test01</div>
+<button id="btn01">测试</button>
+
+
+	<script>
+	window.onload=function(){
+		var F=function(id){
+			//调用原型中元素获取方法，返回this
+			return this.getElementById(id);
+		}
+		F.prototype.getElementById=function(id){
+			this.element=document.getElementById(id);
+			return this;
+		}
+		F.prototype.hide=function(){
+			this.element.style.display="none";
+		}
+
+		var btn01=new F("btn01");
+		console.log(btn01.element);
+		btn01.element.onclick=function(){
+			$("test01").hide();
+			// test01.hide();
+		}
+
+
+		var $=function(id){
+			return new F(id);
+		};
+
+
+	}
+	</script>
+</body>
+</html>
+
+
+
+

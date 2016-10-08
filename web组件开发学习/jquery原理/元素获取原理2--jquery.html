@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<div id="test01">我是test01</div>
+<button id="btn01">测试</button>
+
+
+	<script>
+	window.onload=function(){
+		var $=function(selector,context){
+					return new F(selector,context);
+				};
+		var F=function(selector,context){
+			return this.init(selector,context);
+		}
+
+		/*F.prototype.getNodeList=function(selector,context){
+			context=context||document;
+			this.element=document.querySelectorAll(selector,context);
+			return this;
+		}*/
+
+		// 去掉element将其以数值索引的形式分配到对象中
+		F.prototype.init=function(selector,context){
+			var nodeList=(context||document).querySelectorAll(selector);
+			this.length=nodeList.length;
+			for(var i=0;i<this.length;i++){
+				this[i]=nodeList[i];
+			}
+			return this;
+		}
+		
+		/*F.prototype.hide=function(){
+			var len=this.element.length;
+			for(var i=0;i<len;i++){
+			this.element[i].style.display="none";
+			}
+		}*/
+
+		// var btn01=new F("#btn01");
+		// console.log(btn01);
+		// btn01.element[0].onclick=function(){
+		// 	console.log("o")
+		// 	$("#test01").hide();
+		// }
+
+		$("#btn01")[0].onclick=function(){
+			console.log(this);
+			$("#test01").hide();
+		}
+
+		F.prototype.each=function(fn){
+			var i=0,len=this.length;
+			for(;i<len;i++){
+				fn.call(this[i],i,this[i]);
+			}
+			//?
+			return this;
+		}
+		F.prototype.hide=function(){
+			this.each(function(){
+				this.style.display="none";
+			})
+		}
+
+
+		
+
+
+
+	}
+	</script>
+</body>
+</html>
+
+
+
+

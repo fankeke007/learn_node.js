@@ -1,0 +1,62 @@
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>点击图片隐藏</title>
+<style>
+pre{padding:10px; font-size: 14px; border: 1px solid #ccc; background-color: #eee; font-family:  Monaco, monospace;}
+</style>
+<style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -100px !important;
+    width: 200px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
+
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+}
+</style></head>
+
+<body>
+<img id="image1" src="http://image.zhangxinxu.com/image/study/s/s128/mm1.jpg"> <img id="image2" src="http://image.zhangxinxu.com/image/study/s/s128/mm3.jpg">
+<p><button id="button">点击我</button></p>
+
+<pre>var F = function(id) {
+   return this.getElementById(id);
+};
+F.prototype.getElementById = function(id) {
+    this.element = document.getElementById(id);
+    return this;
+};
+F.prototype.hide = function() {
+    this.element.style.display = "none";
+};
+
+document.getElementById("button").onclick = function() {
+    new F("image1").hide();
+    new F("image2").hide();    
+};</pre>
+
+
+<script>
+var F = function(id) {
+    return this.getElementById(id);
+};
+F.prototype.getElementById = function(id) {
+    this.element = document.getElementById(id);
+    return this;
+};
+F.prototype.hide = function() {
+    this.element.style.display = "none";
+};
+
+document.getElementById("button").onclick = function() {
+    new F("image1").hide();
+    new F("image2").hide();    
+};
+</script>
+
+
+</body></html>
