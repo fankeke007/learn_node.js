@@ -15,9 +15,35 @@ IIFE：(Immediately Invoked Function Expression)立即执行函数表达式。
 //函数名对IIFE并不是必须的，IIFE最常见形式是使用一个匿名函数，但具名函数具有匿名函数的所有优势且语义明确
 形式1：(function(){}());//这两种形式功能上是一致的
 形式2：(function[name](){})();//第一个括号将函数变成一个表达式，第二个括号执行了这个函数
-
+eg1:注意例1中window与global的关系
+var a=2;
+(function IIFE(global){
+	var a=3;
+	console.log(a);//3
+	console.log(global.a);//2
+})(window);
+cosole.log(a);//2
+eg2:倒置代码运行顺序
+var a=2;
+(function IIFE(def){
+	def(window)
+})(function def(global){
+	var a=3;
+	cosole.log(a);//3
+	cosole.log(global.a);//2
+});
 3.闭包？机制？典型应用？
+《你不知道的JavaScript》：当函数可以记住并访问所在的词法作用域时，就产生了闭包。
+即使函数是在当前词法作用域之外执行。
+MDN：是指那些能够访问独立(自由)变量的函数 (变量在本地使用，但定义在一个封闭的作用域中)。
+换句话说，这些函数可以“记忆”它被创建时候的环境。
+典型应用场景：
+i:保护函数内的变量安全。以最开始的例子为例，函数a中i只有函数b才能访问，而无法通过其他途径访问到，因此保护了i的安全性。
+ii:在内存中维持一个变量。依然如前例，由于闭包，函数a中i的一直存在于内存中，因此每次执行c()，都会给i自加1。
+iii:通过保护变量的安全实现JS私有属性和私有方法（不能被外部访问）推荐阅读：http://javascript.crockford.com/private.html
 4.es6中 let/const/module/export/import
+Object.assign();
+
 5.模块依赖加载器/管理器工作原理？
 6.词法作用域与动态作用域的区别？
 7.es6中 => ?
@@ -65,7 +91,77 @@ with(){},若对with中没有的属性赋值，会执行LHS查询，属性会被�
 么就是一个函数声明，否则就是一个函数表达式。
 函数声明会提升。
 
-15.
+15.函数作用域/块作用域？
+js中实现块作用域：
+with(){..};
+try{}catch{};catch分句会创建一个块作用域，其中声明的变量只在catch内部有效;
+let;(let 声明的变量不会提升)
+
+16.提升
+变量声明和函数声明都会提升。函数具有更高优先级。
+注意具名的函数表达式，名称标识符在复制之前无法再所在作用域中使用。
+eg1:(函数名bar只是函数体中的一个本地变量)
+foo();//typeerror
+bar();//referenceerror
+var foo=function bar(){
+	//..
+};
+这段代码经过提升后会被理解为以下代码：
+var foo;
+foo();
+bar();
+foo=function(){
+	var bar=...self...;
+	//...
+}
+命名函数表达式（Named function expression）
+如果你想在函数体内部引用当前函数，则需要创建一个命名函数表达式。
+然后函数名称将会（且只会）作为函数体（作用域内）的本地变量。这样
+也可以避免使用非标准的 arguments.callee 属性。
+var math = {
+  'factorial': function factorial(n) {
+    if (n <= 1)
+      return 1;
+    return n * factorial(n - 1);
+  }
+};
+
+//第二部分
+17.自实现bind函数（MDN bind实现）
+18.Object.create(null)与{}的区别？
+Object.create(null)并不会创建Object.prototype委托。因而比{}"更空".
+19.this?
+20.es6 super?
+21.属性描述符(属性的特性),Object.getOwnPropertyDescriptor(obj,propertyName);
+Object.defineProperty(obj,propertyName,{
+	value:2,
+	writable:true,
+	configurable:true,
+	enumerable:true
+});
+Object.preventExtensions();//禁止扩展
+Object.seal();//密封对象
+Object.freeze();//冻结对象
+
+
+普通对象的属性描述符包含以下4个特性：
+value、writeable、enumerable、configurable
+
+22.属性访问实现细节？
+var myObject={
+	a:2
+};
+myObject.a;//2
+myObject.a是一次属性访问，但是并不仅仅是在myObject中查找
+名为a的属性，虽然看起来是这样。实质上是调用内置的[[get]]
+操作。
+23.in 操作符：检查属性是否在对象及其原型链中。
+hasOwnProperty()：只会检查属性是否在对象中，不会检查原型链。
+
+
+
+
+
 
 
 
