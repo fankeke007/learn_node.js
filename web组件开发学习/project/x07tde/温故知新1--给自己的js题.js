@@ -157,6 +157,8 @@ myObject.a是一次属性访问，但是并不仅仅是在myObject中查找
 操作。
 23.in 操作符：检查属性是否在对象及其原型链中。
 hasOwnProperty()：只会检查属性是否在对象中，不会检查原型链。
+24.prototype VS __proto__?
+25.Object.create()的内部实现机制?
 
 
 

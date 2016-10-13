@@ -1,2 +1,2 @@
-好好学习 天天向上
-node.js awesome
+﻿好好学习 天天向上
+node.js is awesome

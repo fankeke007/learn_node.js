@@ -9,9 +9,9 @@ emitter.on('someEvent', function(arg1, arg2) {
 }); 
 emitter.emit('someEvent', 'arg1 参数', 'arg2 参数'); 
 
-// 返回指定时间的监听器地址
+// 返回指定事件的监听器数组
 var listener_num=emitter.listeners('someEvent');
-console.log(listener_num);
+console.log(listener_num);//[[Function],[Function]]
 
 // 返回指定事件的监听器个数法1
 var num = require('events').EventEmitter.listenerCount(emitter,'someEvent');
