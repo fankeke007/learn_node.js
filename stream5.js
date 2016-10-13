@@ -12,15 +12,15 @@
 // finish - 所有数据已被写入到底层系统时触发。
 
 
-//以下示例链式流(压缩文件)
+//以下示例链式流(解压缩文件)
 //链式是通过连接输出流到另外一个流并创建多个对个流操作链的机制。链式流一般用于管道操作。
 
 var fs = require("fs");
 var zlib = require('zlib');
 
-// 压缩 input.txt 文件为 input.txt.gz
-fs.createReadStream('input.txt')
-  .pipe(zlib.createGzip())
-  .pipe(fs.createWriteStream('input.txt.gz'));
+// 解压 input.txt.gz 文件为 input.txt
+fs.createReadStream('input.txt.gz')
+  .pipe(zlib.createGunzip())
+  .pipe(fs.createWriteStream('decompress_input.txt'));
   
-console.log("文件压缩完成。");
+console.log("文件解压完成。");
