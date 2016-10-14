@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "XHTML1-s.dtd" >
+<html xmlns="http://www.w3.org/TR/1999/REC-html-in-xml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+<style>
+.bodyContainer {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding-left: 32px;
+    padding-right: 32px;
+}
+
+.notebookFor {
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    color: rgb(119, 119, 119);
+    margin: 24px 0px 0px;
+    padding: 0px;
+}
+
+.bookTitle {
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+    color: #333333;
+    margin-top: 22px;
+    padding: 0px;
+}
+
+.authors {
+    font-size: 13px;
+    font-weight: 700;
+    text-align: center;
+    color: rgb(119, 119, 119);
+    margin-top: 22px;
+    margin-bottom: 24px; 
+    padding: 0px;
+}
+
+.sectionHeading {
+    font-size: 24px;
+    font-weight: 700;
+    text-align: left;
+    color: #333333;
+    margin-top: 24px;
+    padding: 0px;
+}
+
+.noteHeading {
+    font-size: 18px;
+    font-weight: 700;
+    text-align: left;
+    color: #333333;
+    margin-top: 20px;
+    padding: 0px;
+}
+
+.noteText {
+    font-size: 18px;
+    font-weight: 500;
+    text-align: left;
+    color: #333333;
+    margin: 2px 0px 0px;
+    padding: 0px;
+}
+
+.highlight_blue {
+    color: rgb(178, 205, 251);
+}
+
+.highlight_orange {
+    color: #ffd7ae;
+}
+
+.highlight_pink {
+    color: rgb(255, 191, 206);
+}
+
+.highlight_yellow {
+    color: rgb(247, 206, 0);
+}
+
+.notebookGraphic {
+    margin-top: 10px;
+    text-align: left;
+}
+
+.notebookGraphic img {
+    -o-box-shadow:      0px 0px 5px #888;
+    -icab-box-shadow:   0px 0px 5px #888;
+    -khtml-box-shadow:  0px 0px 5px #888;
+    -moz-box-shadow:    0px 0px 5px #888;
+    -webkit-box-shadow: 0px 0px 5px #888;
+    box-shadow:         0px 0px 5px #888; 
+    max-width: 100%;
+    height: auto;
+}
+
+hr {
+    border: 0px none;
+    height: 1px;
+    background: none repeat scroll 0% 0% rgb(221, 221, 221);
+}
+</style>
+</head>
+<body>
+<div class='bodyContainer'>
+<div class='notebookFor'>笔记本（用于）</div><div class='bookTitle'>你不知道的JavaScript（上卷） (图灵程序设计丛书)
+</div><div class='authors'>
+[美]辛普森（Kyle Simpson）
+</div><hr/>
+<div class='sectionHeading'>使命</div><div class='noteHeading'>标注 (<span class='highlight_yellow'>黄色</span>) - 位置 137</div><div class='noteText'>不 满足于 只是 让 代码 正常 工作， 而是 想要 弄清楚“ 为什么”。 我 希望 你能 勇于 挑战 这条 崎岖 颠簸 的“ 少有 人 走的 路”， 拥抱 整个 JavaScript。 掌握 了 这些 知识 之后， 无论 什么 技术、 框架 和 流行 词语 你都 能 轻松 理解。</div>
+<div class='noteHeading'>备注 - 位置 138</div><div class='noteText'>心态</div>
+<div class='sectionHeading'>本书排版约定</div><div class='noteHeading'>标注 (<span class='highlight_yellow'>黄色</span>) - 位置 149</div><div class='noteText'>本书 排版 约定 本书 中 使用 以下 排版 约定。 楷体 表示 新的 术语。 等宽 字体 表示 代码 段 以及 段落 中的 程序 元素， 比如 变量、 函数 名、 数据库、 数据 类型、 环境 变量、 语句 以及 关键字。 等宽 粗体 表示 命令 中 不可 改动 的 部分。 等宽 斜体 表示 将由 用户 提供 的 值（ 或由 上下文 确 定的 值） 替换 的 文本。 这个 图标 表示 提示 或 建议。 这个 图标 表示 重要 说明。 这个 图标 表示 警告 或 提醒。</div>
+<div class='noteHeading'>备注 - 位置 161</div><div class='noteText'>排版约定</div>
+<div class='sectionHeading'>1.2.3　编译器有话说</div><div class='noteHeading'>标注 (<span class='highlight_yellow'>黄色</span>) - 位置 341</div><div class='noteText'>LHS 和 RHS 的 含义 是“ 赋值 操作 的 左侧 或 右侧” 并不 一定 意味着 就是“= 赋值 操作 符 的 左侧 或 右侧”。 赋值 操作 还有 其他 几种 形式， 因此 在 概念上 最好 将其 理解 为“ 赋值 操作 的 目标 是 谁（ LHS）” 以及“ 谁是 赋值 操作 的 源头（ RHS）”。</div>
+<div class='noteHeading'>标注 (<span class='highlight_yellow'>黄色</span>) - 位置 370</div><div class='noteText'>你 可能 会 倾向于 将 函数 声明 function foo( a) {...概念 化为 普通 的 变量 声明 和 赋值， 比如 var foo、 foo ＝ function( a) {...。 如果 这样 理解 的 话， 这个 函数 声明 将 需要 进行 LHS 查询。 然而 还有 一个 重要的 细微 差别， 编译器 可以 在 代码 生成 的 同时 处理 声明 和 值 的 定义， 比如 在 引擎 执行 代码 时， 并不 会有 线程 专门 用来 将 一个 函数 值“ 分 配给” foo。 因此， 将 函数 声明 理解 成 前面 讨论 的 LHS 查询 和 赋值 的 形式 并不 合适。</div>
+<div class='sectionHeading'>1.2.5　小测验</div><div class='noteHeading'>标注 (<span class='highlight_yellow'>黄色</span>) - 位置 397</div><div class='noteText'>1. 2. 5 　 小 测验 检验 一下 到 目前 的 理解 程度。 把 自己 当作 引擎， 并同 作用域 进行 一次“ 对话”： function foo( a) { var b = a; return a + b; } var c = foo( 2 ); 1. 找到 其中 所有 的 LHS 查询。（ 这里 有 3 处！） 2. 找到 其中 所有 的 RHS 查询。（ 这里 有 4 处！） 查看 本章 小结 中的 参考 答案。</div>
+<div class='sectionHeading'>1.5　小结</div><div class='noteHeading'>标注 (<span class='highlight_yellow'>黄色</span>) - 位置 455</div><div class='noteText'>1. 5 　 小结 作用域 是一 套 规则， 用于 确定 在何处 以及 如何 查找 变量（ 标识符）。 如果 查找 的 目的 是对 变量 进行 赋值， 那么 就会 使用 LHS 查询； 如果 目的 是 获取 变量 的 值， 就会 使用 RHS 查询。 赋值 操作 符 会 导致 LHS 查询。 ＝ 操作 符 或 调用 函数 时 传入 参数 的 操作 都会 导致 关联 作用域 的 赋值 操作。 JavaScript 引擎 首先 会在 代码 执行 前 对其 进行 编译， 在 这个 过程中， 像 var a = 2 这样 的 声明 会被 分解 成 两个 独立 的 步骤： 1. 首先， var a 在 其 作用域 中 声明 新 变量。 这 会在 最 开始 的 阶段， 也就是 代码 执行 前 进行。 2. 接下来， a = 2 会 查询（ LHS 查询） 变量 a 并对 其 进行 赋值。 LHS 和 RHS 查询 都会 在当 前 执行 作用域 中 开始， 如果 有 需要（ 也就是说 它们 没有 找到 所需 的 标识符）， 就会 向上 级 作用域 继续 查找 目标 标识符， 这样 每次 上升 一级 作用域（ 一 层楼）， 最后 抵达 全局 作用域（ 顶层）， 无论 找到 或 没 找到 都将 停止。 不成功 的 RHS 引用 会 导致 抛出 ReferenceError 异常。 不成功 的 LHS 引用 会 导致 自动 隐式 地 创建 一个 全局 变量（ 非 严格 模式 下）， 该 变量 使用 LHS 引用 的 目标 作为 标识符， 或者 抛出 ReferenceError 异常（ 严格 模式 下）。</div>
+<div class='sectionHeading'>查找</div><div class='noteHeading'>标注 (<span class='highlight_yellow'>黄色</span>) - 位置 538</div><div class='noteText'>全局 变量 会 自动 成为 全局 对象（ 比如 浏览器 中的 window 对象） 的 属性， 因此 可以 不 直接 通过 全局 对象 的 词法 名称， 而是 间接 地 通过 对 全局 对象 属性 的 引用 来 对其 进行 访问。 window. a 通过 这种 技术 可以 访问 那些 被 同名 变量 所 遮蔽 的 全局 变量。 但 非 全局 的 变量 如果 被 遮蔽 了， 无论如何 都 无法 被 访问 到。</div>
+<div class='noteHeading'>标注 (<span class='highlight_yellow'>黄色</span>) - 位置 544</div><div class='noteText'>无论 函数 在哪里 被 调用， 也 无论 它 如何 被 调用， 它的 词法 作用域 都 只 由 函数 被 声明 时 所处 的 位置 决定。</div>
+<div class='sectionHeading'>2.2　欺骗词法</div><div class='noteHeading'>标注 (<span class='highlight_yellow'>黄色</span>) - 位置 552</div><div class='noteText'>2. 2 　 欺骗 词法 如果 词法 作用域 完 全由 写 代码 期间 函数 所 声明 的 位置 来 定义， 怎样 才能 在 运行时 来“ 修改”（ 也 可以说 欺骗） 词法 作用域 呢？ JavaScript 中有 两种 机制 来 实现 这个 目的。 社区 普遍认为 在 代码 中 使用 这 两种 机制 并不 是什么 好 注意。 但是 关于 它们 的 争论 通常 会 忽略 掉 最重要的 点： 欺骗 词法 作用域 会 导致 性能 下降。</div>
+<div class='noteHeading'>备注 - 位置 556</div><div class='noteText'>eval和with能修改词法作用域</div>
+<div class='sectionHeading'>2.2.2　with</div><div class='noteHeading'>标注 (<span class='highlight_yellow'>黄色</span>) - 位置 619</div><div class='noteText'>function foo( obj) { with (obj) { a = 2; } } var o1 = { a: 3 }; var o2 = { b: 3 }; foo( o1 ); console. log( o1. a ); // 2 foo( o2 ); console. log( o2. a ); // undefined console. log( a ); // 2—— 不好， a 被 泄漏 到 全局 作用域 上了！</div>
+<div class='noteHeading'>备注 - 位置 622</div><div class='noteText'>注意最后两行结果产生的原因</div>
+<div class='noteHeading'>标注 (<span class='highlight_yellow'>黄色</span>) - 位置 651</div><div class='noteText'>当 我们 传递 o1 给 with 时， with 所 声明 的 作用域 是 o1， 而 这个 作用域 中含有 一个 同 o1. a 属性 相符 的 标识符。 但当 我们将 o2 作为 作用域 时， 其中 并没有 a 标识符， 因此 进行 了 正常 的 LHS 标识符 查找（ 查看 第 1 章）。</div>
+<div class='sectionHeading'>2.3　小结</div><div class='noteHeading'>标注 (<span class='highlight_yellow'>黄色</span>) - 位置 687</div><div class='noteText'>2. 3 　 小结 词法 作用域 意味着 作用域 是由 书写 代码 时 函数 声明 的 位置 来 决定 的。 编译 的 词法 分析 阶段 基本 能够 知道 全部 标识符 在哪里 以及 是 如何 声明 的， 从而 能够 预测 在 执行 过程中 如何 对 它们 进行 查找。 JavaScript 中有 两个 机制 可以“ 欺骗” 词法 作用域： eval(..) 和 with。 前者 可以 对 一段 包含 一个 或 多个 声明 的“ 代码” 字符串 进行 演算， 并 借此 来 修改 已经 存在 的 词法 作用域（ 在 运行时）。 后者 本质上 是 通过 将 一个 对象 的 引用 当作 作用域 来 处理， 将 对象 的 属性 当作 作用域 中的 标识符 来 处理， 从而 创建 了 一个 新的 词法 作用域（ 同样是 在 运行时）。 这 两个 机制 的 副作用 是 引擎 无法 在 编译 时 对 作用域 查找 进行 优化， 因为 引擎 只能 谨慎 地 认为 这样 的 优化 是 无效 的。 使用 这 其中 任何 一个 机制 都将 导致 代码 运行 变慢。 不要 使用 它们。</div>
+<div class='sectionHeading'>3.1　函数中的作用域</div><div class='noteHeading'>标注 (<span class='highlight_yellow'>黄色</span>) - 位置 733</div><div class='noteText'>函数 作用域 的 含义 是指， 属于 这个 函数 的 全部 变量 都可 以在 整个 函数 的 范围内 使用 及 复 用（ 事实 上在 嵌套 的 作用域 中 也可以 使用）。 这种 设计 方案 是非 常有 用的， 能 充分 利用 JavaScript 变量 可以 根据 需要 改变 值 类型 的“ 动态” 特性。</div>
+<div class='sectionHeading'>3.3　函数作用域</div><div class='noteHeading'>标注 (<span class='highlight_yellow'>黄色</span>) - 位置 826</div><div class='noteText'>区分 函数 声明 和 表达式 最简单 的 方法 是 看 function 关键字 出现 在 声明 中的 位置（ 不仅仅是 一行 代码， 而是 整个 声明 中的 位置）。 如果 function 是 声明 中的 第一个 词， 那么 就是 一个 函数 声明， 否则 就是 一个 函数 表达式。</div>
+<div class='noteHeading'>标注 (<span class='highlight_yellow'>黄色</span>) - 位置 830</div><div class='noteText'>函数 声明 和 函数 表达式 之间 最重要的 区别 是 它们 的 名称 标识符 将会 绑 定 在何处。</div>
+<div class='sectionHeading'>3.3.1　匿名和具名</div><div class='noteHeading'>标注 (<span class='highlight_yellow'>黄色</span>) - 位置 844</div><div class='noteText'>函数 表达式 可以 是 匿名 的， 而 函数 声明 则 不可以 省略 函数 名—— 在 JavaScript 的 语法 中 这是 非法 的。</div>
+<div class='noteHeading'>标注 (<span class='highlight_yellow'>黄色</span>) - 位置 845</div><div class='noteText'>匿名 函数 表达式 书写 起来 简单 快捷， 很多 库 和 工具 也 倾向 鼓励 使用 这种 风格 的 代码。 但是 它 也有 几个 缺点 需要 考虑。 1. 匿名 函数 在 栈 追踪 中 不会 显 示出 有意义 的 函数 名， 使得 调试 很 困难。 2. 如果 没有 函数 名， 当 函数 需要 引用 自身 时 只能 使用 已经 过期 的 arguments. callee 引用， 比如 在 递归 中。 另一个 函数 需要 引用 自身 的 例子， 是在 事件 触发 后事 件 监听器 需要 解 绑 自身。 3. 匿名 函数 省略 了 对于 代码 可读性/ 可理解 性 很重 要的 函数 名。 一个 描述 性的 名称 可以 让 代码 不言自明。</div>
+<div class='noteHeading'>备注 - 位置 852</div><div class='noteText'>匿名函数的一些缺点</div>
+<div class='noteHeading'>标注 (<span class='highlight_yellow'>黄色</span>) - 位置 852</div><div class='noteText'>行 内函 数 表达式 非常 强大 且有 用—— 匿名 和 具名 之间 的 区别 并不 会对 这点 有 任何 影响。 给 函数 表达式 指定 一个 函数 名 可以 有效 解决 以上 问题。 始终 给 函数 表达式 命名 是一 个 最佳 实践：</div>
+<div class='sectionHeading'>3.3.2　立即执行函数表达式</div><div class='noteHeading'>标注 (<span class='highlight_yellow'>黄色</span>) - 位置 863</div><div class='noteText'>比如( function foo(){ .. })()。 第一个( )将 函数 变成 表达式， 第二个( )执行 了 这个 函数。</div>
+<div class='noteHeading'>标注 (<span class='highlight_yellow'>黄色</span>) - 位置 867</div><div class='noteText'>IIFE， 代表 立即 执行 函数 表达式（ Immediately Invoked Function Expression）；</div>
+<div class='noteHeading'>标注 (<span class='highlight_yellow'>黄色</span>) - 位置 873</div><div class='noteText'>相 较 于 传统 的 IIFE 形式， 很多人 都 更喜欢 另一个 改进 的 形式：( function(){ .. }())。 仔细 观察 其中 的 区别。 第一 种 形式 中 函数 表达式 被 包含 在( )中， 然后 在后面 用 另一个() 括号 来 调用。 第二 种 形式 中用 来 调用 的() 括号 被 移 进了 用来 包装 的( )括号 中。 这 两种 形式 在 功能上 是 一致 的。 选择 哪个 全 凭 个人 喜好。</div>
+<div class='noteHeading'>标注 (<span class='highlight_yellow'>黄色</span>) - 位置 879</div><div class='noteText'>IIFE 的 另一个 非常 普遍 的 进阶 用法 是把 它们 当作 函数 调用 并 传递 参数 进去。 例如： var a = 2; (function IIFE( global ) { var a = 3; console. log( a ); // 3 console. log( global. a ); // 2 })( window ); console. log( a ); // 2 我们将 window 对象 的 引用 传递 进去， 但 将 参数 命名为 global， 因此 在 代码 风格 上 对 全局 对象 的 引用 变得 比 引用 一个 没有“ 全局” 字样 的 变量 更加 清晰。 当然可以 从外部 作用域 传递 任何 你 需要 的 东西， 并将 变量 命名为 任何 你 觉得 合适 的 名字。 这对 于 改进 代码 风格 是非 常有 帮助 的。</div>
+<div class='noteHeading'>标注 (<span class='highlight_yellow'>黄色</span>) - 位置 894</div><div class='noteText'>undefined = true; // 给 其他 代码 挖 了 一 个大 坑！ 绝对 不要 这样做！ (function IIFE( undefined ) { var a; if (a === undefined) { console. log( &quot;Undefined is safe here!&quot; ); } })();</div>
+<div class='noteHeading'>标注 (<span class='highlight_yellow'>黄色</span>) - 位置 897</div><div class='noteText'>IIFE 还有 一种 变化 的 用途 是 倒置 代码 的 运行 顺序， 将 需要 运行 的 函数 放在 第二位， 在 IIFE 执行 之后 当作 参数 传递 进去。 这种 模式 在 UMD（ Universal Module Definition） 项 目中 被 广泛 使用。 尽管 这种 模式 略显 冗长， 但 有些 人 认为 它 更易 理解。 var a = 2; (function IIFE( def ) { def( window ); })(function def( global ) { var a = 3; console. log( a ); // 3 console. log( global. a ); // 2 }); 函数 表达式 def 定义 在 片段 的 第二 部分， 然后 当作 参数（ 这个 参数 也 叫作 def） 被 传递 进 IIFE 函数 定义 的 第一 部分 中。 最后， 参数 def（ 也就是 传递 进去 的 函数） 被 调用， 并将 window 传入 当作 global 参数 的 值。</div>
+<div class='sectionHeading'>3.4　块作用域</div><div class='noteHeading'>标注 (<span class='highlight_yellow'>黄色</span>) - 位置 915</div><div class='noteText'>for (var i= 0; i&lt; 10; i++) { console. log( i ); } 我们 在 for 循环 的 头部 直接 定义 了 变量 i， 通常 是因为 只想 在 for 循环 内部 的 上下 文中 使用 i， 而 忽略 了 i 会被 绑 定 在 外部 作用域（ 函数 或 全局） 中的 事实。 这 就是 块 作用域 的 用处。 变量 的 声明 应该 距离 使用 的 地方 越 近 越好， 并 最大限度 地 本地 化。</div>
+<div class='sectionHeading'>3.4.2　try/catch</div><div class='noteHeading'>标注 (<span class='highlight_yellow'>黄色</span>) - 位置 958</div><div class='noteText'>try { undefined(); // 执行 一个 非法 操作 来 强制 制造 一个 异常 } catch (err) { console. log( err ); // 能够 正常 执行！ } console. log( err ); // ReferenceError: err not found</div>
+<div class='sectionHeading'>3.4.3　let</div><div class='noteHeading'>标注 (<span class='highlight_yellow'>黄色</span>) - 位置 979</div><div class='noteText'>let 关键字 可以 将 变量 绑 定 到 所在 的 任意 作用域 中（ 通常 是{ .. }内部）。 换句话说， let 为 其 声明 的 变量 隐式 地 了 所 在的 块 作用域。</div>
+<div class='noteHeading'>标注 (<span class='highlight_yellow'>黄色</span>) - 位置 985</div><div class='noteText'>用 let 将 变量 附加 在 一个 已经 存 在的 块 作用域 上 的 行为 是 隐式 的。 在 开发 和 修改 代码 的 过程中， 如果 没有 密切 关注 哪些 块 作用域 中有 绑 定的 变量， 并且 习惯 性地 移动 这些 块 或者 将其 包含 在 其 他的 块 中， 就会 导致 代码 变得 混乱。</div>
+<div class='noteHeading'>标注 (<span class='highlight_yellow'>黄色</span>) - 位置 994</div><div class='noteText'>只要 声明 是 有效 的， 在 声明 中的 任意 位置 都可以 使用{ .. }括号 来 为 let 创建 一个 用于 绑 定的 块。 在这 个 例子 中， 我们 在 if 声明 内部 显 式 地 创建 了 一个 块， 如果 需要 对其 进行 重 构， 整个 块 都可以 被 方便 地 移动 而 不会 对 外部 if 声明 的 位置 和 语义 产生 任何 影响。</div>
+<div class='noteHeading'>标注 (<span class='highlight_yellow'>黄色</span>) - 位置 1026</div><div class='noteText'>为 变量 显 式 声明 块 作用域， 并对 变量 进行 本地 绑 定 是非 常有 用的 工具，</div>
+<div class='noteHeading'>标注 (<span class='highlight_yellow'>黄色</span>) - 位置 1033</div><div class='noteText'>for 循环 头部 的 let 不仅 将 i 绑 定 到了 for 循环 的 块 中， 事实上 它将 其 重新 绑 定 到了 循环 的 每一个 迭代 中， 确保 使用 上一个 循环 迭代 结束 时 的 值 重新 进行 赋值。</div>
+<div class='noteHeading'>标注 (<span class='highlight_yellow'>黄色</span>) - 位置 1043</div><div class='noteText'>由于 let 声明 附属 于 一个 新的 作用域 而 不是 当前 的 函数 作用域（ 也不 属于 全局 作用域）， 当 代码 中 存在 对于 函数 作用域 中 var 声明 的 隐式 依赖 时， 就会 有很 多 隐藏 的 陷阱， 如果 用 let 来 替代 var 则需 要在 代码 重 构 的 过程中 付出 额外 的 精力。</div>
+<div class='sectionHeading'>3.5　小结</div><div class='noteHeading'>标注 (<span class='highlight_yellow'>黄色</span>) - 位置 1070</div><div class='noteText'>3. 5 　 小结 函数 是 JavaScript 中最 常见 的 作用域 单元。 本质上， 声明 在 一个 函数 内部 的 变量 或 函数 会在 所处 的 作用域 中“ 隐藏” 起来， 这是 有意 为之 的 良好 软件 的 设计 原则。 但 函数 不是 唯一 的 作用域 单元。 块 作用域 指的 是 变量 和 函数 不仅 可以 属于 所处 的 作用域， 也可以 属于 某个 代码 块（ 通常指{ .. }内部）。 从 ES3 开始， try/ catch 结构 在 catch 分句 中 具有 块 作用域。 在 ES6 中 引入 了 let 关键字（ var 关键字 的 表亲）， 用来 在任 意 代码 块 中 声明 变量。 if (..) { let a = 2; }会 声明 一个 劫持 了 if 的{ .. }块 的 变量， 并且 将 变量 添加 到 这个 块 中。 有些 人 认为 块 作用域 不应该 完全 作为 函数 作用域 的 替代 方案。 两种 功能 应该 同时 存在， 开发者 可以 并且 也应该 根据 需要 选择 使用 何种 作用域， 创造 可读、 可 维护 的 优良 代码。</div>
+<div class='sectionHeading'>第 4 章　提升</div><div class='noteHeading'>标注 (<span class='highlight_yellow'>黄色</span>) - 位置 1083</div><div class='noteText'>函数 作用域 和 块 作用域 的 行为 是 一样 的， 可以 总结 为： 任何 声明 在 某个 作用域 内 的 变量， 都将 附属 于 这个 作用域。</div>
+<div class='sectionHeading'>4.2　编译器再度来袭</div><div class='noteHeading'>标注 (<span class='highlight_yellow'>黄色</span>) - 位置 1110</div><div class='noteText'>因此， 正确 的 思考 思路 是， 包括 变量 和 函数 在内 的 所有 声明 都会 在任 何 代码 被 执行 前 首先 被 处理。</div>
+<div class='noteHeading'>标注 (<span class='highlight_yellow'>黄色</span>) - 位置 1112</div><div class='noteText'>当你 看到 var a = 2; 时， 可能 会 认为 这是 一个 声明。 但 JavaScript 实际上 会 将其 看成 两个 声明： var a; 和 a = 2;。 第一个 定义 声明 是在 编译 阶段 进行 的。 第二个 赋值 声明 会被 留在 原地 等待 执行 阶段。</div>
+<div class='noteHeading'>标注 (<span class='highlight_yellow'>黄色</span>) - 位置 1123</div><div class='noteText'>因此， 打个 比方， 这个 过程 就好 像 变量 和 函数 声明 从 它们 在 代码 中 出现 的 位置 被“ 移动” 到了 最 上面。 这个 过程 就叫 作 提升。</div>
+<div class='noteHeading'>标注 (<span class='highlight_yellow'>黄色</span>) - 位置 1126</div><div class='noteText'>只有 声明 本身 会被 提升， 而 赋值 或 其他 运行 逻辑 会 留在 原地。 如果 提升 改变 了 代码 执行 的 顺序， 会 造成 非常 严重 的 破坏。</div>
+<div class='noteHeading'>标注 (<span class='highlight_yellow'>黄色</span>) - 位置 1132</div><div class='noteText'>另外 值得注意 的 是， 每个 作用域 都会 进行 提升 操作。</div>
+<div class='noteHeading'>标注 (<span class='highlight_yellow'>黄色</span>) - 位置 1139</div><div class='noteText'>函数 声明 会被 提升， 但是 函数 表达式 却不 会被 提升。</div>
+<div class='noteHeading'>标注 (<span class='highlight_yellow'>黄色</span>) - 位置 1141</div><div class='noteText'>foo(); // 不是 ReferenceError, 而是 TypeError! var foo = function bar() { // ... }; 这段 程序 中的 变量 标识符 foo() 被 提升 并 分配 给 所在 作用域（ 在这里 是 全局 作用域）， 因此 foo() 不会 导致 ReferenceError。 但是 foo 此时 并没有 赋值（ 如果 它是 一个 函数 声明 而 不是 函数 表达式， 那么 就会 赋值）。 foo() 由于 对 undefined 值 进行 函数 调用 而 导致 非法 操作， 因此 抛出 TypeError 异常。</div>
+<div class='noteHeading'>标注 (<span class='highlight_pink'>粉色</span>) - 位置 1150</div><div class='noteText'>同时 也要 记住， 即使是 具名 的 函数 表达式， 名称 标识符 在 赋值 之前 也 无法 在 所在 作用域 中 使用： foo(); // TypeError bar(); // ReferenceError var foo = function bar() { // ... }; 这个 代码 片段 经过 提升 后， 实际上 会被 理解 为 以下 形式： var foo; foo(); // TypeError bar(); // ReferenceError foo = function() { var bar = ...self... // ... }</div>
+<div class='sectionHeading'>4.3　函数优先</div><div class='noteHeading'>标注 (<span class='highlight_pink'>粉色</span>) - 位置 1158</div><div class='noteText'>函数 声明 和 变量 声明 都会 被 提升。 但是 一个 值得注意 的 细节（ 这个 细节 可以 出现 在 有 多个“ 重复” 声明 的 代码 中） 是 函数 会 首先 被 提升， 然后 才是 变量。</div>
+<div class='noteHeading'>标注 (<span class='highlight_yellow'>黄色</span>) - 位置 1162</div><div class='noteText'>foo(); // 1 var foo; function foo() { console. log( 1 ); } foo = function() { console. log( 2 ); }; 会 输出 1 而 不是 2！ 这个 代码 片段 会被 引擎 理解 为 如下 形式： function foo() { console. log( 1 ); } foo(); // 1 foo = function() { console. log( 2 ); }; 注意， var foo 尽管 出现 在 function foo()... 的 声明 之前， 但它 是 重复 的 声明（ 因此 被忽略了）， 因为 函数 声明 会被 提升 到 普通 变量 之前。</div>
+<div class='noteHeading'>标注 (<span class='highlight_pink'>粉色</span>) - 位置 1179</div><div class='noteText'>一个 普通 块 内部 的 函数 声明 通常 会被 提升 到 所在 作用域 的 顶部， 这个 过程 不会 像 下面 的 代码 暗示 的 那样 可以 被 条件 判断 所 控制： foo(); // &quot;b&quot; var a = true; if (a) { function foo() { console. log(&quot; a&quot;); } } else { function foo() { console. log(&quot; b&quot;); } } 但是 需要 注意 这个 行为 并不 可靠， 在 JavaScript 未来 的 版本 中有 可能发生 改变， 因此 应该 尽可 能避免 在 块 内部 声明 函数。</div>
+<div class='sectionHeading'>4.4　小结</div><div class='noteHeading'>标注 (<span class='highlight_yellow'>黄色</span>) - 位置 1185</div><div class='noteText'>4. 4 　 小结 我们 习惯 将 var a = 2; 看作 一个 声明， 而 实际上 JavaScript 引擎 并不 这么 认为。 它将 var a 和 a = 2 当作 两个 单独 的 声明， 第一个 是 编译 阶段 的 任务， 而 第二个 则是 执行 阶段 的 任务。 这 意味着 无论 作用域 中的 声明 出现 在什么 地方， 都将 在 代码 本身 被 执行 前 首先 进行 处理。 可以 将 这个 过程 形象 地 想象 成 所有 的 声明（ 变量 和 函数） 都 会被“ 移动” 到 各自 作用域 的 最 顶端， 这个 过程 被称为 提升。 声明 本身 会被 提升， 而 包括 函数 表达式 的 赋值 在内 的 赋值 操作 并不 会 提升。 要 注意 避免 重复 声明， 特别是 当 普通 的 var 声明 和 函数 声明 混合 在一起 的 时候， 否则 会 引起 很多 危险 的 问题！</div>
+<div class='sectionHeading'>5.2　实质问题</div><div class='noteHeading'>标注 (<span class='highlight_yellow'>黄色</span>) - 位置 1224</div><div class='noteText'>当 函数 可以 记住 并 访问 所在 的 词法 作用域 时， 就 产生了 闭 包， 即使 函数 是在 当前 词法 作用域 之外 执行。</div>
+<div class='noteHeading'>标注 (<span class='highlight_yellow'>黄色</span>) - 位置 1261</div><div class='noteText'>在 foo() 执行 后， 通常 会 期待 foo() 的 整个 内部 作用域 都被 销毁， 因为 我们 知道 引擎 有 垃圾 回收 器 用来 释放 不再 使用 的 内存 空间。 由于 看上去 foo() 的 内容 不会 再被 使用， 所以 很 自然地 会考 虑 对其 进行 回收。 而 闭 包 的“ 神奇” 之处 正是 可以 阻止 这件事 情 的 发生。 事实上 内部 作用域 依然 存在， 因此 没有 被 回收。 谁在 使用 这个 内部 作用域？ 原来 是 bar() 本身 在 使用。</div>
+<div class='noteHeading'>标注 (<span class='highlight_yellow'>黄色</span>) - 位置 1277</div><div class='noteText'>这个 函数 在 定义 时 的 词法 作用域 以外 的 地方 被 调用。 闭 包 使得 函数 可以 继续 访问 定义 时 的 词法 作用域。</div>
+<div class='noteHeading'>标注 (<span class='highlight_yellow'>黄色</span>) - 位置 1278</div><div class='noteText'>当然， 无论 使用 何种 方式 对 函数 类型 的 值 进行 传递， 当 函数 在别处 被 调用 时 都可以 观察 到 闭 包。</div>
+<div class='noteHeading'>标注 (<span class='highlight_yellow'>黄色</span>) - 位置 1293</div><div class='noteText'>无论 通过 何种 手段 将 内部 函数 传递 到 所在 的 词法 作用域 以外， 它 都会 持有 对 原始 定义 作用域 的 引用， 无论 在何处 执行 这个 函数 都会 使用 闭 包。</div>
+<div class='sectionHeading'>5.3　现在我懂了</div><div class='noteHeading'>标注 (<span class='highlight_yellow'>黄色</span>) - 位置 1309</div><div class='noteText'>内置 的 工具 函数 setTimeout(..) 持有 对 一个 参数 的 引用， 这个 参数 也许 叫作 fn 或者 func， 或者 其他 类似 的 名字。 引擎 会 调用 这个 函数， 在 例子 中就 是 内部 的 timer 函数， 而 词法 作用域 在 这个 过程中 保持 完整。</div>
+<div class='noteHeading'>标注 (<span class='highlight_yellow'>黄色</span>) - 位置 1321</div><div class='noteText'>本质上 无论 何时何地， 如果 将 函数（ 访问 它们 各自 的 词法 作用域） 当作 第 一级 的 值 类型 并 到处 传递， 你就 会 看到 闭 包在 这些 函数 中的 应用。 在 定时器、 事件 监听器、 Ajax 请求、 跨 窗口 通信、 Web Workers 或者 任何 其他 的 异步（ 或者 同步） 任务 中， 只要 使 用了 回 调 函数， 实际上 就是 在 使用 闭 包！</div>
+<div class='sectionHeading'>5.4　循环和闭包</div><div class='noteHeading'>标注 (<span class='highlight_yellow'>黄色</span>) - 位置 1344</div><div class='noteText'>要 说明 闭 包， for 循环 是最 常见 的 例子。 for (var i= 1; i&lt;= 5; i++) { setTimeout( function timer() { console. log( i ); }, i* 1000 ); } 由于 很多 开发者 对 闭 包 的 概念 认识 得 并不是 很 清楚， 因此当 循环 内部 包含 函数 定义 时， 代码 格式 检查 器 经常 发出 警告。 我们 在这里 介绍 如何 才能 正确地 使用 闭 包 并发 挥 它的 威力， 但是 代码 格式 检查 器 并没有 那么 灵敏， 它 会 假设 你 并不 真正 了解 自己 在做 什么， 所以 无论如何 都会 发出 警告。 正常 情况下， 我们 对这 段 代码 行为 的 预期 是 分别 输出 数字 1~ 5， 每秒 一次， 每次 一个。 但 实际上， 这段 代码 在 运行时 会 以 每秒 一次 的 频率 输出 五次 6。 这是 为什么？ 首先 解释 6 是 从 哪里 来的。 这个 循环 的 终止 条件 是 i 不再&lt;= 5。 条件 首次 成立 时 i 的 值 是 6。 因此， 输出 显示 的 是 循环 结束 时 i 的 最 终值。 仔细 想 一下， 这 好像 又是 显而易见 的， 延迟 函数 的 回 调 会在 循环 结束 时 才 执行。 事实上， 当 定时器 运行时 即使 每个 迭代 中 执 行的 是 setTimeout(.., 0)， 所 有的 回 调 函数 依然 是在 循环 结束 后才 会被 执行， 因此 会 每次 输出 一个 6 出来。</div>
+<div class='noteHeading'>标注 (<span class='highlight_pink'>粉色</span>) - 位置 1376</div><div class='noteText'>for (var i= 1; i&lt;= 5; i++) { (function() { setTimeout( function timer() { console. log( i ); }, i* 1000 ); })(); } 这样 能 行吗？ 试试 吧， 我 等着 你。 我不 卖关子 了。 这样 不行。 但是 为什么 呢？ 我们 现在 显然 拥有 更多 的 词法 作用域 了。 的 确 每个 延迟 函数 都会 将 IIFE 在 每次 迭代 中 创建 的 作用域 封闭 起来。 如果 作用域 是 空的， 那么 仅仅 将它 们 进行 封闭 是 不够 的。 仔细 看一下， 我们 的 IIFE 只是 一个 什么 都没 有的 空 作用域。 它 需要 包含 一点 实质 内容 才能 为我 们 所用。</div>
+<div class='noteHeading'>标注 (<span class='highlight_pink'>粉色</span>) - 位置 1384</div><div class='noteText'>它 需要 有 自己的 变量， 用来 在 每个 迭代 中 储存 i 的 值： for (var i= 1; i&lt;= 5; i++) { (function() { var j = i; setTimeout( function timer() { console. log( j ); }, j* 1000 ); })(); } 行了！ 它 能 正常 工作 了！。 可以 对这 段 代码 进行 一些 改进： for (var i= 1; i&lt;= 5; i++) { (function( j) { setTimeout( function timer() { console. log( j ); }, j* 1000 ); })( i ); } 当然， 这些 IIFE 也不 过 就是 函数， 因此 我们 可以 将 i 传递 进去， 如果 愿意 的 话 可以 将 变量 名 定为 j， 当然 也可以 还 叫作 i。 无论如何 这段 代码 现在 可以 工作 了。</div>
+<div class='noteHeading'>标注 (<span class='highlight_yellow'>黄色</span>) - 位置 1398</div><div class='noteText'>在 迭代 内 使用 IIFE 会为 每个 迭代 都 生成 一个 新的 作用域， 使得 延迟 函数 的 回 调 可以 将 新的 作用域 封闭 在 每个 迭代 内部， 每个 迭代 中 都会 含有 一个 具有 正确 值 的 变量 供 我们 访问。</div>
+<div class='sectionHeading'>5.5　模块</div><div class='noteHeading'>标注 (<span class='highlight_pink'>粉色</span>) - 位置 1459</div><div class='noteText'>如果 要 更简单 的 描述， 模块 模式 需要 具备 两个 必要条件。 1. 必须 有 外部 的 封闭 函数， 该 函数 必须 至少 被 调用 一次（ 每次 调用 都会 创建 一个 新的 模块 实例）。 2. 封闭 函数 必须 返回 至少 一个 内部 函数， 这样 内部 函数 才能 在 私有 作用域 中 形成 闭 包， 并且 可以 访问 或者 修改 私有 的 状态。</div>
+<div class='sectionHeading'>5.5.2　未来的模块机制</div><div class='noteHeading'>标注 (<span class='highlight_pink'>粉色</span>) - 位置 1547</div><div class='noteText'>import 可以 将 一个 模块 中的 一个 或 多个 API 导入 到 当前 作用域 中， 并 分别 绑 定 在 一个 变量 上（ 在 我们 的 例子 里 是 hello）。 module 会 将 整个 模块 的 API 导入 并 绑 定 到 一个 变量 上（ 在 我们 的 例子 里 是 foo 和 bar）。 export 会 将 当前 模块 的 一个 标识符（ 变量、 函数） 导出 为 公共 API。 这些 操作 可以 在 模块 定义 中 根据 需要 使用 任意 多次。</div>
+<div class='sectionHeading'>附录A　动态作用域</div><div class='noteHeading'>标注 (<span class='highlight_pink'>粉色</span>) - 位置 1601</div><div class='noteText'>需要 明确 的 是， 事实上 JavaScript 并不 具有 动态 作用域。 它 只有 词法 作用域， 简单 明了。 但是 this 机制 某种程度 上 很像 动态 作用域。 主要 区别： 词法 作用域 是在 写 代码 或者说 定义 时 确定 的， 而 动态 作用域 是在 运行时 确定 的。（ this 也是！） 词法 作用域 关注 函数 在何处 声明， 而 动态 作用域 关注 函数 从何 处 调用。</div>
+<div class='noteHeading'>备注 - 位置 1605</div><div class='noteText'>词法作用域域动态作用域的区别？</div>
+<div class='sectionHeading'>1.2.1　指向自身</div><div class='noteHeading'>标注 (<span class='highlight_pink'>粉色</span>) - 位置 1908</div><div class='noteText'>人们 很容易 把 this 理解 成 指向 函数 自身，</div>
+<div class='noteHeading'>备注 - 位置 1908</div><div class='noteText'>this误解1</div>
+<div class='noteHeading'>标注 (<span class='highlight_pink'>粉色</span>) - 位置 1962</div><div class='noteText'>但是 在 第二个 例子 中， 传入 setTimeout(..) 的 回 调 函数 没有 名称 标识符（ 这种 函数 被称为 匿名 函数）， 因此 无法 从 函数 内部 引用 自身。 还有 一种 传统 的 但是 现在 已经 被弃 用 和 批判 的 用法， 是 使用 arguments. callee 来 引用 当前 正在 运行 的 函数 对象。 这是 唯一 一种 可以 从 匿名 函数 对象 内部 引用 自身 的 方法。 然而， 更好 的 方式 是 避免 使用 匿名 函数， 至少 在 需要 自 引用 时 使用 具名 函数（ 表达式）。 arguments. callee 已经 被弃 用， 不应该 再 使用 它。</div>
+<div class='sectionHeading'>1.2.2　它的作用域</div><div class='noteHeading'>标注 (<span class='highlight_pink'>粉色</span>) - 位置 1990</div><div class='noteText'>第二 种 常见 的 误解 是， this 指向 函数 的 作用域。 这个 问题 有点 复杂， 因为 在 某种 情况下 它是 正确 的， 但是 在 其他 情况下 它 却是 错误 的。 需要 明确 的 是， this 在 任何 情况下 都不 指向 函数 的 词法 作用域。 在 JavaScript 内部， 作用域 确实 和 对象 类似， 可见 的 标识符 都是 它的 属性。 但是 作用域“ 对象” 无法 通过 JavaScript 代码 访问， 它 存 在于 JavaScript 引擎 内部。</div>
+<div class='noteHeading'>备注 - 位置 1991</div><div class='noteText'>this误解2</div>
+<div class='sectionHeading'>1.3　this到底是什么</div><div class='noteHeading'>标注 (<span class='highlight_pink'>粉色</span>) - 位置 2016</div><div class='noteText'>排除 了 一些 错误 理解 之后， 我们 来 看看 this 到底 是 一种 什么样 的 机制。 之前 我们 说过 this 是在 运行时 进行 绑 定的， 并不 是在 编写 时 绑 定， 它的 上下文 取决于 函数 调用 时 的 各种 条件。 this 的 绑 定 和 函数 声明 的 位置 没有 任何 关系， 只 取决于 函数 的 调用 方式。 当 一个 函数 被 调用 时， 会 创建 一个 活动 记录（ 有时候 也称 为 执行 上下文）。 这个 记录 会 包含 函数 在哪里 被 调用（ 调用 栈）、 函数 的 调用 方法、 传入 的 参数 等 信息。 this 就是 记录 的 其中 一个 属性， 会在 函数 执行 的 过程中 用到。</div>
+<div class='sectionHeading'>2.2.1　默认绑定</div><div class='noteHeading'>标注 (<span class='highlight_pink'>粉色</span>) - 位置 2070</div><div class='noteText'>独立 函数 调用。</div>
+<div class='noteHeading'>标注 (<span class='highlight_pink'>粉色</span>) - 位置 2079</div><div class='noteText'>中， 函数 调用 时 应用 了 this 的 默认 绑 定， 因此 this 指向 全局 对象。</div>
+<div class='noteHeading'>备注 - 位置 2080</div><div class='noteText'>独立函数调用时this指向</div>
+<div class='noteHeading'>标注 (<span class='highlight_pink'>粉色</span>) - 位置 2085</div><div class='noteText'>如果 使用 严格 模式（ strict mode）， 那么 全局 对象 将 无法 使用 默认 绑 定， 因此 this 会 绑 定 到 undefined：</div>
+<div class='sectionHeading'>2.2.2　隐式绑定</div><div class='noteHeading'>标注 (<span class='highlight_pink'>粉色</span>) - 位置 2122</div><div class='noteText'>对象 属性 引用 链 中 只有 最 顶层 或者说 最后 一层 会 影响 调用 位置。</div>
+<div class='noteHeading'>标注 (<span class='highlight_pink'>粉色</span>) - 位置 2124</div><div class='noteText'>function foo() { console. log( this. a ); } var obj2 = { a: 42, foo: foo }; var obj1 = { a: 2, obj2: obj2 }; obj1. obj2. foo(); // 42</div>
+<div class='noteHeading'>备注 - 位置 2125</div><div class='noteText'>对象属性引用链中只有最后一层会影响调用位置</div>
+<div class='noteHeading'>标注 (<span class='highlight_yellow'>黄色</span>) - 位置 2127</div><div class='noteText'>隐式 丢失</div>
+<div class='noteHeading'>备注 - 位置 2127</div><div class='noteText'>隐式丢失的几种典型情况及解决办法</div>
+<div class='noteHeading'>标注 (<span class='highlight_pink'>粉色</span>) - 位置 2155</div><div class='noteText'>那样， 回 调 函数 丢失 this 绑 定 是非 常 常见 的。 除此之外， 还有 一种 情况 this 的 行为 会 出乎 我们 意料： 调用 回 调 函数 的 函数 可能 会 修改 this。</div>
+<div class='sectionHeading'>2.2.4　new绑定</div><div class='noteHeading'>标注 (<span class='highlight_pink'>粉色</span>) - 位置 2249</div><div class='noteText'>JavaScript 中 new 的 机制 实际上 和 面向 类 的 语言 完全 不同。</div>
+<div class='noteHeading'>标注 (<span class='highlight_pink'>粉色</span>) - 位置 2251</div><div class='noteText'>首先 我们 重新 定义 一下 JavaScript 中的“ 构造 函数”。 JavaScript， 构造 函数 只是 一些 使用 new 操作 符 时 被 调用 的 函数。 它们 并不 会 属于 某个 类， 也不 会 实例 化 一个 类。 实际上， 它们 甚至 都不能 说是 一种 特殊 的 函数 类型， 它们 只是 被 new 操作 符 调用 的 普通 函数 而已。</div>
+<div class='noteHeading'>标注 (<span class='highlight_pink'>粉色</span>) - 位置 2260</div><div class='noteText'>所以， 包括 内置 对象 函数（ 比如 Number(..)， 详情 请 查看 第 3 章） 在内 的 所有 函数 都可 以用 new 来 调用， 这种 函数 调用 被称为 构造 函数 调用。 这里 有一个 重要 但是 非常 细微 的 区别： 实际上 并不 存在 所谓 的“ 构造 函数”， 只有 对于 函数 的“ 构造 调用”。</div>
+<div class='noteHeading'>备注 - 位置 2260</div><div class='noteText'>构造函数与构造函数调用</div>
+<div class='noteHeading'>标注 (<span class='highlight_pink'>粉色</span>) - 位置 2264</div><div class='noteText'>使用 new 来 调用 函数， 或者说 发生 构造 函数 调用 时， 会 自动 执行 下面 的 操作。 1. 创建（ 或者说 构造） 一个 全新 的 对象。 2. 这个 新 对象 会被 执行[[ 原型]] 连接。 3. 这个 新 对象 会 绑 定 到 函数 调用 的 this。 4. 如果 函数 没有 返回 其他 对象， 那么 new 表达式 中的 函数 调用 会 自动 返回 这个 新 对象。</div>
+<div class='noteHeading'>备注 - 位置 2264</div><div class='noteText'>发生构造函数调用时的内部过程（4步）</div>
+<div class='sectionHeading'>判断this</div><div class='noteHeading'>标注 (<span class='highlight_pink'>粉色</span>) - 位置 2386</div><div class='noteText'>判断 this 现在 我们 可以 根据 优先级 来 判断 函数 在某 个 调用 位置 应 用的 是 哪 条规 则。 可以 按照 下面 的 顺序 来 进行 判断： 1. 函数 是否 在 new 中 调用（ new 绑 定）？ 如果 是的 话 this 绑 定的 是 新 创建 的 对象。 var bar = new foo() 2. 函数 是否 通过 call、 apply（ 显 式 绑 定） 或者 硬 绑 定调 用？ 如果 是的 话， this 绑 定的 是指 定的 对象。 var bar = foo. call( obj2) 3. 函数 是否 在 某个 上下文 对象 中 调用（ 隐式 绑 定）？ 如果 是的 话， this 绑 定的 是 那个 上下文 对象。 var bar = obj1. foo() 4. 如果 都不 是的 话， 使用 默认 绑 定。 如果 在 严格 模式 下， 就 绑 定 到 undefined， 否则 绑 定 到 全局 对象。 var bar = foo() 就是 这样。 对于 正常 的 函数 调用 来说， 理解 了 这些 知识 你就 可以 明白 this 的 绑 定 原理 了。 不过…… 凡事 总有 例外。</div>
+<div class='sectionHeading'>2.4.1　被忽略的this</div><div class='noteHeading'>标注 (<span class='highlight_pink'>粉色</span>) - 位置 2411</div><div class='noteText'>　 被 忽略 的 this 如果 你把 null 或者 undefined 作为 this 的 绑 定 对象 传入 call、 apply 或者 bind， 这些 值 在调 用 时会 被 忽略， 实际 应 用的 是 默认 绑 定 规则：</div>
+<div class='noteHeading'>标注 (<span class='highlight_pink'>粉色</span>) - 位置 2454</div><div class='noteText'>在 JavaScript 中 创建 一个 空 对象 最简单 的 方法 都是 Object. create( null)（ 详细 介绍 请看 第 5 章）。 Object. create( null) 和{} 很像， 但是 并不 会 创建 Object. prototype 这个 委托， 所以 它 比{}“ 更 空”：</div>
+<div class='noteHeading'>备注 - 位置 2454</div><div class='noteText'>Object.create(null)与{}的区别</div>
+<div class='sectionHeading'>2.4.2　间接引用</div><div class='noteHeading'>标注 (<span class='highlight_pink'>粉色</span>) - 位置 2467</div><div class='noteText'>另一个 需要 注意 的 是， 你有 可能（ 有意 或者 无意 地） 创建 一个 函数 的“ 间接 引用”， 在 这种 情况下， 调用 这个 函数 会 应用 默认 绑 定 规则。 间接 引用 最 容易 在 赋值 时 发生： function foo() { console. log( this. a ); } var a = 2; var o = { a: 3, foo: foo }; var p = { a: 4 }; o. foo(); // 3 (p. foo = o. foo)(); // 2</div>
+<div class='noteHeading'>标注 (<span class='highlight_pink'>粉色</span>) - 位置 2476</div><div class='noteText'>注意： 对于 默认 绑 定来 说， 决定 this 绑 定 对象 的 并不是 调用 位置 是否 处于 严格 模式， 而是 函数 体 是否 处于 严格 模式。 如果 函数 体 处于 严格 模式， this 会被 绑 定 到 undefined， 否则 this 会被 绑 定 到 全局 对象。</div>
+<div class='sectionHeading'>2.4.3　软绑定</div><div class='noteHeading'>标注 (<span class='highlight_pink'>粉色</span>) - 位置 2486</div><div class='noteText'>如果 可以 给 默认 绑 定 指定 一个 全局 对象 和 undefined 以外 的 值， 那就 可以 实现 和 硬 绑 定 相同 的 效果， 同时 保留 隐式 绑 定 或者 显 式 绑 定 修改 this 的 能力。</div>
+<div class='sectionHeading'>2.5　this词法</div><div class='noteHeading'>标注 (<span class='highlight_pink'>粉色</span>) - 位置 2520</div><div class='noteText'>箭头 函数 并不是 使用 function 关键字 定义 的， 而是 使用 被称为“ 胖 箭头” 的 操作 符=&gt; 定义 的。 箭头 函数 不 使用 this 的 四种 标准 规则， 而是 根据 外层（ 函数 或者 全局） 作用域 来 决定 this。</div>
+<div class='noteHeading'>标注 (<span class='highlight_pink'>粉色</span>) - 位置 2527</div><div class='noteText'>function foo() { // 返回 一个 箭头 函数 return (a) =&gt; { //this 继承 自 foo() console. log( this. a ); }; } var obj1 = { a: 2 }; var obj2 = { a: 3 }; var bar = foo. call( obj1 ); bar. call( obj2 ); // 2, 不是 3！ foo() 内部 创建 的 箭头 函数 会 捕获 调用 时 foo() 的 this。 由于 foo() 的 this 绑 定 到 obj1， bar（ 引用 箭头 函数） 的 this 也会 绑 定 到 obj1， 箭头 函数 的 绑 定 无法 被 修改。（ new 也 不行！）</div>
+<div class='noteHeading'>标注 (<span class='highlight_pink'>粉色</span>) - 位置 2538</div><div class='noteText'>箭头 函数 最 常 用于 回 调 函数 中， 例如 事件 处理器 或者 定时器： function foo() { setTimeout(() =&gt; { // 这里 的 this 在此 法上 继承 自 foo() console. log( this. a ); },100); } var obj = { a: 2 }; foo. call( obj ); // 2 箭头 函数 可以 像 bind(..) 一样 确保 函数 的 this 被 绑 定 到 指定 对象， 此外， 其 重要性 还 体 现在 它 用 更 常见 的 词法 作用域 取代 了 传统 的 this 机制。</div>
+<div class='sectionHeading'>2.6　小结</div><div class='noteHeading'>标注 (<span class='highlight_pink'>粉色</span>) - 位置 2563</div><div class='noteText'>2. 6 　 小结 如果 要 判断 一个 运行 中 函数 的 this 绑 定， 就 需要 找到 这个 函数 的 直接 调用 位置。 找到 之后 就可以 顺序 应用 下面 这 四条 规则 来 判断 this 的 绑 定 对象。 1. 由 new 调用？ 绑 定 到 新 创建 的 对象。 2. 由 call 或者 apply（ 或者 bind） 调用？ 绑 定 到 指定 的 对象。 3. 由上 下文 对象 调用？ 绑 定 到 那个 上下文 对象。 4. 默认： 在 严格 模式 下 绑 定 到 undefined， 否则 绑 定 到 全局 对象。 一定 要 注意， 有些 调用 可能 在 无意中 使用 默认 绑 定 规则。 如果 想“ 更 安全” 地 忽略 this 绑 定， 你 可以 使用 一个 DMZ 对象， 比如 ø = Object. create( null)， 以 保护 全局 对象。 ES6 中的 箭头 函数 并不 会使 用 四条 标准 的 绑 定 规则， 而是 根据 当前 的 词法 作用域 来 决定 this， 具体来说， 箭头 函数 会 继承 外层 函数 调用 的 this 绑 定（ 无论 this 绑 定 到 什么）。 这 其实 和 ES6 之前 代码 中的 self = this 机制 一样。</div>
+<div class='noteHeading'>备注 - 位置 2563</div><div class='noteText'>this小结</div>
+<div class='sectionHeading'>3.2　类型</div><div class='noteHeading'>标注 (<span class='highlight_pink'>粉色</span>) - 位置 2600</div><div class='noteText'>注意， 简单 基本 类型（ string、 boolean、 number、 null 和 undefined） 本身 并不是 对象。 null 有时 会被 当作 一种 对象 类型， 但是 这 其实 只是 语言 本身 的 一个 bug， 即对 null 执行 typeof null 时会 返回 字符串&quot; object&quot;。 1 实际上， null 本身 是 基本 类型。</div>
+<div class='sectionHeading'>3.3　内容</div><div class='noteHeading'>标注 (<span class='highlight_pink'>粉色</span>) - 位置 2676</div><div class='noteText'>如果 要 访问 myObject 中 a 位置 上 的 值， 我们 需要 使用. 操作 符 或者[] 操作 符。. a 语法 通常 被称为“ 属性 访问”，[&quot; a&quot;] 语法 通常 被称为“ 键 访问”。 实际上 它们 访问 的 是 同一个 位置， 并且 会 返回 相同 的 值 2， 所以 这 两个 术语 是 可以 互换 的。</div>
+<div class='noteHeading'>标注 (<span class='highlight_pink'>粉色</span>) - 位置 2683</div><div class='noteText'>这 两种 语法 的 主要 区别 在于. 操作 符 要求 属性 名 满足 标识符 的 命名 规范， 而[&quot;..&quot;] 语法 可以 接受 任意 UTF- 8/ Unicode 字符串 作为 属性 名。 举例 来说， 如果 要 引用 名称 为&quot; Super- Fun!&quot; 的 属性， 那就 必须 使用[&quot; Super- Fun!&quot;] 语法 访问， 因为 Super- Fun! 并不是 一个 有效 的 标识符 属性 名。</div>
+<div class='sectionHeading'>3.3.1　可计算属性名</div><div class='noteHeading'>标注 (<span class='highlight_yellow'>黄色</span>) - 位置 2700</div><div class='noteText'>如果 你 需要 通过 表达式 来 计算 属性 名， 那么 我们 刚刚 讲到 的 myObject[..] 这种 属性 访问 语法 就可以 派上 用场 了， 如 可以 使用 myObject[ prefix + name]。 但是 使用 文字 形式 来 声明 对象 时 这样做 是 不行 的。</div>
+<div class='noteHeading'>标注 (<span class='highlight_pink'>粉色</span>) - 位置 2703</div><div class='noteText'>ES6 增加 了 可计算 属性 名， 可以 在 文字 形式 中 使用[] 包裹 一个 表达式 来 当作 属性 名： var prefix = &quot;foo&quot;; var myObject = { [prefix + &quot;bar&quot;]: &quot;hello&quot;, [prefix + &quot;baz&quot;]: &quot;world&quot; }; myObject[&quot; foobar&quot;]; // hello myObject[&quot; foobaz&quot;]; // world 可计算 属性 名 最 常用 的 场景 可能 是 ES6 的 符号（ Symbol）， 本书 中 不作 详细 介绍。 不过 简单 来说， 它们 是一 种 新的 基础 数据 类型， 包含 一个 不透明 且 无法 预测 的 值（ 从 技术 角度 来说 就是 一个 字符串）。 一般来说 你 不会 用到 符号 的 实际 值（ 因为 理论上 来说 在 不同 的 JavaScript 引擎 中 值 是不同 的）， 所以 通常 你 接 触到 的 是 符号 的 名称，</div>
+<div class='sectionHeading'>3.3.3　数组</div><div class='noteHeading'>标注 (<span class='highlight_pink'>粉色</span>) - 位置 2760</div><div class='noteText'>var myArray = [ &quot;foo&quot;, 42, &quot;bar&quot; ]; myArray. baz = &quot;baz&quot;; myArray. length; // 3 myArray. baz; // &quot;baz&quot; 可以 看到 虽然 添加 了 命名 属性（ 无论是 通过. 语法 还是[] 语法）， 数组 的 length 值 并未 发生 变化。</div>
+<div class='noteHeading'>标注 (<span class='highlight_pink'>粉色</span>) - 位置 2767</div><div class='noteText'>注意： 如果 你 试图 向 数组 添加 一个 属性， 但是 属性 名“ 看起来” 像 一个 数字， 那 它 会变 成 一个 数值 下标（ 因此 会 修改 数组 的 内容 而 不是 添加 一个 属性）： var myArray = [ &quot;foo&quot;, 42, &quot;bar&quot; ]; myArray[&quot; 3&quot;] = &quot;baz&quot;; myArray. length; // 4 myArray[ 3]; // &quot;baz&quot;</div>
+<div class='sectionHeading'>3.3.4　复制对象</div><div class='noteHeading'>标注 (<span class='highlight_pink'>粉色</span>) - 位置 2806</div><div class='noteText'>ES6 定义 了 Object. assign(..) 方法 来 实现 浅 复制。 Object. assign(..) 方法 的 第一个 参数 是 目标 对象， 之后 还可以 跟 一个 或 多个 源 对象。 它 会 遍历 一个 或 多个 源 对象 的 所有 可 枚举（ enumerable， 参见 下面 的 代码） 的 自有 键（ owned key， 很快 会 介绍） 并把 它们 复制（ 使用= 操作 符 赋值） 到 目标 对象， 最后 返回 目标 对象，</div>
+<div class='noteHeading'>标注 (<span class='highlight_pink'>粉色</span>) - 位置 2815</div><div class='noteText'>是， 由于 Object. assign(..) 就是 使用= 操作 符 来 赋值， 所以 源 对象 属性 的 一些 特性（ 比如 writable） 不会 被 复制 到 目标 对象。</div>
+<div class='sectionHeading'>3.3.10　存在性</div><div class='noteHeading'>标注 (<span class='highlight_yellow'>黄色</span>) - 位置 3049</div><div class='noteText'>所有 的 普通 对象 都可以 通过 对于 Object. prototype 的 委托（ 参见 第 5 章） 来 访问 hasOwnProperty(..)， 但是 有的 对象 可能 没有 连接 到 Object. prototype（ 通过 Object. create( null) 来 创建—— 参见 第 5 章）。 在 这种 情况下， 形如 myObejct. hasOwnProperty(..) 就会 失败。 这时 可以 使用 一种 更加 强硬 的 方法 来 进行 判断： Object. prototype. hasOwnProperty. call( myObject,&quot; a&quot;)， 它 借用 基础 的 hasOwnProperty(..) 方法 并把 它 显 式 绑 定（ 参见 第 2 章） 到 myObject 上。</div>
+<div class='noteHeading'>标注 (<span class='highlight_pink'>粉色</span>) - 位置 3058</div><div class='noteText'>看起来 in 操作 符 可以 检查 容器 内 是否 有 某个 值， 但 是它 实际上 检查 的 是 某个 属性 名 是否 存在。 对于 数组 来说 这个 区别 非常 重要， 4 in [2, 4, 6] 的 结果 并不 是你 期待 的 True， 因为[ 2, 4, 6] 这个 数组 中 包含 的 属性 名 是 0、 1、 2， 没有 4。</div>
+<div class='noteHeading'>标注 (<span class='highlight_pink'>粉色</span>) - 位置 3075</div><div class='noteText'>在 数组 上 应用 for.. in 循环 有时 会 产生 出人意料 的 结果， 因为 这种 枚举 不仅 会 包含 所有 数值 索引， 还会 包含 所有 可 枚举 属性。 最好 只在 对象 上 应用 for.. in 循环， 如果 要 遍历 数组 就 使用 传统 的 for 循环 来 遍历 数值 索引。</div>
+<div class='noteHeading'>标注 (<span class='highlight_pink'>粉色</span>) - 位置 3086</div><div class='noteText'>propertyIsEnumerable(..) 会 检查 给定 的 属性 名 是否 直接 存在 于 对象 中（ 而 不是 在 原型 链 上） 并且 满足 enumerable: true。</div>
+<div class='noteHeading'>标注 (<span class='highlight_pink'>粉色</span>) - 位置 3089</div><div class='noteText'>Object. keys(..) 会 返回 一个 数组， 包含 所有 可 枚举 属性， Object. getOwnPropertyNames(..) 会 返回 一个 数组， 包含 所有 属性， 无论 它们 是否 可 枚举。</div>
+<div class='noteHeading'>标注 (<span class='highlight_pink'>粉色</span>) - 位置 3091</div><div class='noteText'>in 和 hasOwnProperty(..) 的 区别 在于 是否 查找[[ Prototype]] 链， 然而， Object. keys(..) 和 Object. getOwnPropertyNames(..) 都 只会 查找 对象 直接</div>
+<div class='sectionHeading'>3.4　遍历</div><div class='noteHeading'>标注 (<span class='highlight_pink'>粉色</span>) - 位置 3101</div><div class='noteText'>for.. in 循环 可以 用来 遍历 对象 的 可 枚举 属性 列表（ 包括[[ Prototype]] 链）。 但是 如何 遍历 属 性的 值 呢？ 对于 数值 索引 的 数组 来说， 可以 使用 标准 的 for 循环 来 遍历 值： var myArray = [1, 2, 3]; for (var i = 0; i &lt; myArray. length; i++) { console. log( myArray[ i] ); } // 1 2 3 这 实际上 并不 是在 遍历 值， 而是 遍历 下标 来 指向 值， 如 myArray[ i]。</div>
+<div class='noteHeading'>标注 (<span class='highlight_yellow'>黄色</span>) - 位置 3109</div><div class='noteText'>ES5 中 增加 了 一些 数组 的 辅助 迭代 器， 包括 forEach(..)、 every(..) 和 some(..)。 每种 辅助 迭代 器 都可以 接受 一个 回 调 函数 并把 它 应用 到 数组 的 每个 元素 上， 唯一 的 区别 就是 它们 对于 回 调 函数 返回 值 的 处理 方式 不同。 forEach(..) 会 遍历 数组 中的 所有 值 并 忽略 回 调 函数 的 返回 值。 every(..) 会 一直 运行 直到 回 调 函数 返回 false（ 或者“ 假” 值）， some(..) 会 一直 运行 直到 回 调 函数 返回 true（ 或者“ 真” 值）。 every(..) 和 some(..) 中 特殊 的 返回 值 和 普通 for 循环 中的 break 语句 类似， 它们 会 提前 终止 遍历。 使用 for.. in 遍历 对象 是 无法 直接 获取 属性 值 的， 因为 它 实际上 遍历 的 是对 象 中的 所有 可 枚举 属性， 你 需要 手动 获取 属性 值。 遍历 数组 下标 时 采 用的 是 数字 顺序（ for 循环 或者 其他 迭代 器）， 但是 遍历 对象 属性 时 的 顺序 是 不确定 的， 在 不同 的 JavaScript 引擎 中 可能 不一样。 因此， 在 不同 的 环境 中 需要 保证 一致性 时， 一定 不要 相信 任何 观察 到 的 顺序， 它们 是 不可 靠的。 那么 如何 直接 遍历 值 而 不是 数组 下标（ 或者 对象 属性） 呢？ 幸好， ES6 增加 了 一种 用来 遍历 数组 的 for.. of 循环 语法（ 如果 对象 本身 定义 了 迭代 器 的 话 也可以 遍历 对象）：</div>
+<div class='sectionHeading'>4.5 小结</div><div class='noteHeading'>标注 (<span class='highlight_pink'>粉色</span>) - 位置 3612</div><div class='noteText'>4. 5 小结 类 是一 种 设计 模式。 许多 语言 提供 了 对于 面向 类 软件 设计 的 原生 语法。 JavaScript 也有 类似 的 语法， 但是 和 其他 语言 中的 类 完全 不同。 类 意味着 复制。 传统 的 类 被 实例 化 时， 它的 行为 会被 复制 到 实例 中。 类 被 继承 时， 行为 也会 被 复制 到 子类 中。 多 态（ 在 继承 链 的 不同 层次 名称 相同 但是 功能 不同 的 函数） 看起来 似乎是 从 子类 引用 父 类， 但是 本质上 引用 的 其实 是 复制 的 结果。 JavaScript 并不 会（ 像 类 那样） 自动 创建 对象 的 副本。 混入 模式（ 无论 显 式 还是 隐式） 可以 用来 模拟 类 的 复制 行为， 但是 通常 会 产生 丑陋 并且 脆弱 的 语法， 比如 显 式 伪 多 态（ OtherObj. methodName. call( this, ...)）， 这 会 让 代码 更加 难懂 并且 难以 维护。 此外， 显 式 混入 实际上 无法 完全 模拟 类 的 复制 行为， 因为 对象（ 和 函数！ 别 忘了 函数 也是 对象） 只能 复制 引用， 无法 复制 被 引用 的 对象 或者 函数 本身。 忽视 这一点 会 导致 许多 问题。 总 地 来说， 在 JavaScript 中 模拟 类 是 得不偿失 的， 虽然 能 解决 当前 的 问题， 但是 可能 会 埋下 更多 的 隐患。</div>
+<div class='sectionHeading'>5.2.2　“构造函数”</div><div class='noteHeading'>标注 (<span class='highlight_pink'>粉色</span>) - 位置 3877</div><div class='noteText'>上一 段 代码 很容易 让人 认为 Foo 是一 个 构造 函数， 因为 我们 使用 new 来 调用 它 并且 看到 它“ 构造” 了 一个 对象。 实际上， Foo 和你 程序 中的 其他 函数 没有 任何 区别。 函数 本身 并不是 构造 函数， 然而， 当你 在 普通 的 函数 调用 前面 加上 new 关键字 之后， 就会 把这 个 函数 调用 变成 一个“ 构造 函数 调用”。 实际上， new 会 劫持 所有 普通 函数 并用 构造 对象 的 形式 来 调用 它。</div>
+<div class='noteHeading'>标注 (<span class='highlight_pink'>粉色</span>) - 位置 3892</div><div class='noteText'>换句话说， 在 JavaScript 中 对于“ 构造 函数” 最 准确 的 解释 是， 所 有带 new 的 函数 调用。 函数 不是 构造 函数， 但是 当 且 仅 当 使用 new 时， 函数 调用 会 变成“ 构造 函数 调用”。</div>
+<div class='sectionHeading'>5.2.3　技术</div><div class='noteHeading'>标注 (<span class='highlight_pink'>粉色</span>) - 位置 3988</div><div class='noteText'>a1. constructor 是一 个 非常 不可靠 并且 不安全 的 引用。 通常 来说 要 尽量 避免 使用 这些 引用。</div>
+<div class='sectionHeading'>检查“类”关系</div><div class='noteHeading'>备注 - 位置 4135</div><div class='noteText'>可以通过Object.getOwnPropertyNames(Object.prototype)来查看Object.prototype的属性</div>
+<div class='sectionHeading'>第 6 章　行为委托</div><div class='noteHeading'>备注 - 位置 4312</div><div class='noteText'>原型链机制的本质</div>
+<div class='sectionHeading'>6.1.3　比较思维模型</div><div class='noteHeading'>备注 - 位置 4514</div><div class='noteText'>Object.getOwnPropertyNames(Function.prototype);
+
+[&quot;length&quot;, &quot;name&quot;, &quot;arguments&quot;, &quot;caller&quot;, &quot;apply&quot;, &quot;bind&quot;, &quot;call&quot;, &quot;toString&quot;, &quot;constructor&quot;]</div>
+</div> 
+</body> 
+</html> 
