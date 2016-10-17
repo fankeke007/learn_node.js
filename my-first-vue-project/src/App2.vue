@@ -1,9 +1,13 @@
 <template>
 
-  <hello></hello>
-  <header></header>
+  <!-- <hello1></hello1> -->
+  
   <div id="app">
+   <header1 v-bind:msgfromfather="items.length" 
+   v-on:from-child="listenToMyBoy"></header1>
+   <!-- 当 fromChild是无效，一定得是form-child形式 -->
    <h1>{{title}}</h1>
+   <h1>看看从子组件里传过来的是什么:{{childWords}}</h1>
    <input v-model="newItem" @keyup.enter="addNew">
    <ul>
      <li v-for="item in items" v-bind:class="{finished:item.isFinished}" v-on:click="toggleFinished(item)">{{item.label}}</li>
@@ -12,8 +16,9 @@
 </template>
 
 <script>
-import Hello from './components/Hello';
-// import Top from './components/header'
+// import Hello1 from './components/Hello';
+import Header1 from './components/topHeader';
+// Do not use built-in or reserved HTML elements as component id: Header
 import Store from './store';
 
 export default {
@@ -21,7 +26,9 @@ export default {
     return{
       title:'this is a todo list',
       items:Store.fetch(),
-      newItem:'添加新任务'
+      newItem:'添加新任务',
+      num:0,
+      childWords:''
     }
 
   },
@@ -43,10 +50,13 @@ export default {
         isFinished:false
       })
       this.newItem='';
+    },
+    listenToMyBoy:function(msg){
+      this.childWords=msg;
     }
   },
    components: {
-    Hello
+    Header1
   }
 }
 </script>
@@ -57,6 +67,7 @@ html {
 }
 .finished{
   text-decoration: underline;
+  color: red;
 
 }
 body {
