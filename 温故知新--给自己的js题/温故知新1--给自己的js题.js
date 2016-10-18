@@ -159,9 +159,15 @@ myObject.a是一次属性访问，但是并不仅仅是在myObject中查找
 hasOwnProperty()：只会检查属性是否在对象中，不会检查原型链。
 24.prototype VS __proto__?
 25.Object.create()的内部实现机制?
+26.获取对象所有属性名
+Object.getOwnPropertyNames(Error.prototype);
 
-
-
+对比如下两个可知方法一般定义在原型上
+Object.getOwnPropertyNames(Array);
+//["length", "name", "arguments", "caller", "prototype", "isArray", "from", "of"]
+Object.getOwnPropertyNames(Array.prototype);
+//["length", "constructor", "toString", "toLocaleString", "join", "pop", "push", "reverse", "shift", "unshift", "slice", "splice", "sort", "filter", "forEach", "some", "every", "map", "indexOf", "lastIndexOf", "reduce", "reduceRight", "copyWithin", "find", "findIndex", "fill", "includes", "entries", "keys", "concat"]0: "length"1: "constructor"2: "toString"3: "toLocaleString"4: "join"5: "pop"6: "push"7: "reverse"8: "shift"9: "unshift"10: "slice"11: "splice"12: "sort"13: "filter"14: "forEach"15: "some"16: "every"17: "map"18: "indexOf"19: "lastIndexOf"20: "reduce"21: "reduceRight"22: "copyWithin"23: "find"24: "findIndex"25: "fill"26: "includes"27: "entries"28: "keys"29: "concat"length: 30__proto__: Array[0]
+27.数组操作方法：数组 a.slice();slice方法从何处来？
 
 
 
