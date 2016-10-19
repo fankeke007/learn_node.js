@@ -182,8 +182,96 @@ null
 22. []+{} VS {}+[]  ?
 []+{};//[object Object]
 {}+[];//0
+//第二个中{}被当作空代码块来执行，因而就 +[]起作用
 
-23. 
+23. （规则优先级从上而下）
+i:     string==number，string转为number后再比较
+ii:    boolean==?,boolean转为number后再比较
+iii:   null==undefined ,（==操作中null等同于undefined）除此以外 null /undefined 和其他任何职都不想等。
+iiii:  对象==非对象，对象 ToPromitive()后再与非对象比较。
+
+
+包装对象和基本值==操作为true；===操作为false。
+==操作中：
+
+
+
+24. [3].valueOf();//[3]
+    [3].toString();//"3"
+    [].valueOf();//[]
+    [].toString();//"",注意是空字符串
+
+    var a={};
+    a.valueOf();//{},！！！若无定制则返回对象本身
+    a.toString();//'[object Object]'
+
+25. []==[];//false
+    []==![];//true  ???Boolean([]);//true
+
+26. js中处理 a<=b : 先是处理 b<a,然后将结果反转。
+即“小于或等于”在js中是“不大于”的意思，即 !(a>b)
+
+27. JSON 格式 {"a":43} 直接在控制台中运行，ff会报错，但
+chrome会解析为一个对象。正解为ff 。
+(注意：var a={a:42}与没有 var a 只有{a:42}的区别。
+	有时为对象，无时为标签语法)
+28. 对象解构？
+
+eg:es6 开始{..}可用于“解构赋值”
+function getData(){
+	return {
+		a:42,
+		b:"foo"
+	}
+}
+var {a,b}=getData();
+console.log(a,b);//42 "foo"
+eg: {..}用于函数命名参数的对象结构，方便隐式地用对象
+属性赋值。
+function foo({a,b,c}){
+	//不再需要这样：
+	//var a=obj.a;...
+	console.log(a,b,c);
+}
+foo({
+	c:[1,2,3],
+	a:42,
+	b:"foo"
+});//42 "foo" [1,2,3]
+
+29.左右关联与执行顺序的关系？（执行顺序不受关联影响，关联只影响组合）
+三目运算符为右关联：  a?b:c?d:e
+其组合为 a?b:(c?d:e)
+右关联不是指从右往左执行，而是指从右往左组合。任何
+时候，无论是组合还是关联，严格的执行顺序都应该是从左
+到有。
+
+30.chrome控制台缓存清理：console.clear()
+或者快捷键"ctrl+L"
+
+31. es6 yield
+
+32.Number(null)//0
+   Number([])//0
+   Number({})//NaN
+   Number(undefined)//NaN
+   Number("")//0
+   Number(false)//0
+
+33. try catch finally throw
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
