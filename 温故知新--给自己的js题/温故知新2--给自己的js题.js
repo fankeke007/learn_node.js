@@ -260,6 +260,17 @@ foo({
 
 33. try catch finally throw
 
+33. setTimeout(fn,1000);fn的执行时间？（不一定是1000之后，为什么）
+34. promise
+35.几个概念：并发、线程、进程、任务、事件循环
+36. 回调地狱的真正问题所在：硬编码，前后依赖，一个环节出错
+后面都挂。
+对回调的改进：
+分离回调（success、failure）、error-first（node）风格
+
+
+
+
 
 
 
