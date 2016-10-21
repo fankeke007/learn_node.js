@@ -268,6 +268,42 @@ foo({
 对回调的改进：
 分离回调（success、failure）、error-first（node）风格
 
+37.Function.apply.bind(fn,null)?
+//将函数fn的参数形式转换为数组形式（主要想利用apply）
+   Function.bind.apply(fn)?
+   // 主要想利用bind
+
+function getY(x) {
+    return new Promise( function(resolve,reject){
+        setTimeout( function(){
+            resolve( (3 * x) - 1 );
+        }, 100 );
+    } );
+}
+
+function foo(bar,baz) {
+    var x = bar * baz;
+    // return both promises
+    return [
+        Promise.resolve( x ),
+        getY( x )
+    ];
+}
+
+function spread(fn) {
+    return Function.apply.bind( fn, null );
+}
+
+Promise.all(
+    foo( 10, 20 )
+)
+.then(
+    spread( function(x,y){
+        console.log( x, y );    // 200 599
+    } )
+)
+
+
 
 
 
