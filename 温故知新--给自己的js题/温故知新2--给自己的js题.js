@@ -303,6 +303,67 @@ Promise.all(
     } )
 )
 
+38.es6 结构？
+39.解释如下代码？
+// polyfill-safe guard check
+if (!Promise.wrap) {
+    Promise.wrap = function(fn) {
+        return function() {
+            var args = [].slice.call( arguments );
+            return new Promise( function(resolve,reject){
+                fn.apply(
+                    null,
+                    args.concat( function(err,v){
+                        if (err) {
+                            reject( err );
+                        }
+                        else {
+                            resolve( v );
+                        }
+                    } )
+                );
+            } );
+        };
+    };
+}
+
+40. 对比闭包版本的迭代器与生成器版本的迭代器？
+
+41. 生成器？
+//分析如下代码？
+function foo(x,y) {
+    ajax(
+        "http://some.url.1/?x=" + x + "&y=" + y,
+        function(err,data){
+            if (err) {
+                // throw an error into `*main()`
+                it.throw( err );
+            }
+            else {
+                // resume `*main()` with received `data`
+                it.next( data );
+            }
+        }
+    );
+}
+
+function *main() {
+    try {
+        var text = yield foo( 11, 31 );
+        console.log( text );
+    }
+    catch (err) {
+        console.error( err );
+    }
+}
+
+var it = main();
+
+// start it all up!
+it.next();
+
+
+
 
 
 
