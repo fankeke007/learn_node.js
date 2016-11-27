@@ -22,15 +22,15 @@ var a=2;
 	console.log(a);//3
 	console.log(global.a);//2
 })(window);
-cosole.log(a);//2
+console.log(a);//2
 eg2:倒置代码运行顺序
 var a=2;
 (function IIFE(def){
 	def(window)
 })(function def(global){
 	var a=3;
-	cosole.log(a);//3
-	cosole.log(global.a);//2
+	console.log(a);//3
+	console.log(global.a);//2
 });
 3.闭包？机制？典型应用？
 《你不知道的JavaScript》：当函数可以记住并访问所在的词法作用域时，就产生了闭包。
