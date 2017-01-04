@@ -39,12 +39,15 @@ function serveStatic(response,cache,absPath){
 //http服务器
 var server=http.createServer(function(request,response){
 	var filePath=false;
-	if(require.url=='/'){
+	if(request.url=='/'){
 		filePath='public/index.html';
 	}else{
-		filePath='public'+request.url;
+		filePath='public'+request.url;//为index.html里面的css,js用
 	}
+	console.log(request.url)
+	// console.log(filePath);
 	var absPath='./'+filePath;
+	// console.log(absPath)
 	serveStatic(response,cache,absPath);
 })
 server.listen(3030,function(){
