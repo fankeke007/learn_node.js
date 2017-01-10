@@ -18,9 +18,6 @@ exports.listen=function(server){
 			socket.emit('rooms',io.sockets.manager.rooms);
 		});
 		handleClientDisconnection(socket,nickNames,namesUsed);
-
-
-
 	});
 
 };
@@ -41,10 +38,10 @@ function joinRoom(socket,room){
 	socket.join(room);
 	currentRoom[socket.id]=room;
 	socket.emit('joinResult',{room:room});
-	socket.broadcast.to(room).emit('message',{text:nickNames[socket.id]+'has joined'+room+'.'});
+	socket.broadcast.to(room).emit('message',{text:nickNames[socket.id]+' has joined '+room+'.'});
 	var usersInRoom=io.sockets.clients(room);
 	if(usersInRoom.length>1){
-		var usersInRoomSummery='Users currently in'+room+':';
+		var usersInRoomSummery='Users currently in '+room+':';
 		for(var index in usersInRoom){
 			var userSocketId=usersInRoom[index].id;
 			if(userSocketId!=socket.id){
