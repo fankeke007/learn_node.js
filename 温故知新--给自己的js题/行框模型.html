@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>行框知识点总结</title>
+	<style>
+		body{
+			background: url('images/rule_bg.png');
+			max-width: 900px;
+			margin: 0 auto ;
+			height: 100%;
+		}
+		.wrap p{
+			background: rgba(0, 0, 0, 0.2);
+			font-size: 30px;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<p>hello <span style="font-size: 1.5em;background: rgba(155,38,45,0.2);">world Google ABCDEFGabcdefg</span><img src="images/pic1.png" alt=""></p>
+		<p><span> webkit默认行高为1.33 </span><span style="background: rgba(155,142,101,0.3);">不同字体其基线高度也不同</span></p>
+
+		<p style="line-height: 0.5">hello <span style="font-size: 1.5em;background: rgba(155,38,45,0.2);">world Google ABCDEFGabcdefg</span><img src="images/pic1.png" alt="">
+		<span>行高为0.5 </span><span style="background: rgba(155,142,101,0.3);">不同字体其基线高度也不同</span></p>
+
+		<p>hello <span style="font-size: 1.5em;background: rgba(155,38,45,0.2);">world Google ABCDEFGabcdefg</span><img style="vertical-align: middle;" src="images/pic1.png" alt="">
+		<span> webkit默认行高为1.33 </span><span style="background: rgba(155,142,101,0.3);">不同字体其基线高度也不同</span></p>
+
+		<p  style="line-height: 2">hello <span style="font-size: 1.5em;background: rgba(155,38,45,0.2);">world Google ABCDEFGabcdefg</span><img style="vertical-align: middle;" src="images/pic1.png" alt="">
+		<span> 行高为2 </span><span style="background: rgba(155,142,101,0.3);">不同字体其基线高度也不同</span></p>
+	</div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>浮动的点点滴滴</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			max-width: 900px;
+			margin: 0 auto;
+		}
+		.clearfix:after{
+			content: "";
+			display: block;
+			clear: both;
+		}
+		.fl{
+			float: left;
+		}
+		.fr{
+			float: right;
+		}
+		.eg{
+			padding: 10px;
+			border: 1px solid #ccc;
+		}
+		.eg1 span,.eg1 p{
+			background: #e8e8e8;
+		}
+		.eg1 span{
+			width: 300px;
+		}
+	</style>
+</head>
+<body>
+	<h3>1.当一元素被设置为浮动，其效果相当于设置了方向的diasplay:inline-block;</h3>
+	<div class="eg clearfix eg1">
+		<span class="fl">我是一个span元素我被设置了左浮动</span>
+		<p class="fr">我是一个p元素我被设置了左浮动</p>
+	</div>
+	<h3>1.当一元素被设置为浮动，其效果相当于设置了方向的diasplay:inline-block;</h3>
+	<div class="eg clearfix eg1">
+		<span class="fl">我是一个span元素我被设置了左浮动</span>
+		<p class="fr">我是一个p元素我被设置了左浮动</p>
+	</div>
+	
+</body>
+</html>

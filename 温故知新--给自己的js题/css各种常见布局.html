@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css各种常见布局</title>
+	<style>
+		body{
+			max-width: 900px;
+			margin: 0 auto;
+		}
+		pre{
+			padding: 20px;
+			border-left: 2px solid #ccc;
+			background: #e8e8e8;
+		}
+		.h_center_parent_1{
+			border: 1px solid #ccc;
+			width: 600px;
+			text-align: center;
+		}
+		.h_center_parent_2{
+			border: 1px solid #ccc;
+			width: 600px;
+			padding: 10px;
+		}
+		.h_center_child_2{
+			width: 300px;
+			margin: 0 auto;
+			background: #e8e8e8;
+		}
+		.h_center_parent_3{
+			border: 1px solid #ccc;
+			width: 600px;
+			padding: 10px;
+			text-align: center;
+		}
+		.h_center_child_3{
+			display: inline;
+			background: #e8e8e8;
+		}
+		.h_center_parent_4{
+			border: 1px solid #ccc;
+			display: flex;
+			justify-content: center;
+		}
+		.v_center_parent_1{
+			border: 1px solid #ccc ;
+			width: 600px;
+			height: 100px;
+		}
+		.v_center_child_1{
+			line-height: 100px;
+
+		}
+		.v_center_parent_2{
+			display: table-cell;
+			vertical-align: middle;
+			border: 1px solid #ccc ;
+			width: 600px;
+			height: 100px;
+		}
+		.v_center_child_2{
+			/* display: inline-block;
+			 */
+		}
+		.fl{
+			float: left;
+		}
+		.test2{
+			display:block;
+			width:300px;
+			margin:0 auto;
+			background: #e8e8e8;
+		}
+		.test{
+			text-align: center;
+		}
+		.test3{
+			display:inline-block;
+			/*display:block;*/
+			width:300px;
+			background: #e8e8e8;
+			/* margin:0 auto; */
+		}
+		.v_center_parent_3{
+			border: 1px solid #ccc ;
+			width: 600px;
+			height: 100px;
+			position: absolute;
+		}
+		.v_center_child_3{
+			position: absolute;
+			width: 300px;
+			top: 0;
+			bottom: 0;
+			margin:auto;
+		}
+		.box{
+    display:table-cell;
+    vertical-align:middle;
+    text-align:center;
+    width:100px;
+    height:120px;
+    background:purple;
+}
+.box span{
+    display: inline-block;
+    vertical-align: middle;
+}
+	</style>
+</head>
+<body>
+	<h1>居中</h1>
+	<ul>
+		<li>
+		<h3>水平居中</h3>
+		<ul>
+			<li><a href="#h1">行内元素:text-align:center</a></li>
+			<li><a href="#h2">定宽块状元素:margin:x auto;(即设定左右margin为auto)</a></li>
+			<li><a href="#h3">不定宽块状元素：设置子元素为display:inline;父元素设置：text-align:center;</a></li>
+			<li><a href="#h4">通用方案（移动端，pc端ie9+）:父元素设置display:flex;justify-content:conter;</a></li>
+		</ul>
+		</li>
+		<li>
+		<h3>垂直居中</h3>
+		<ul>
+			<li><a href="#v1">父元素一定，子元素为单行内联文本：设置父元素的height等于行高line-height</a></li>
+			<li><a href="#v2">父元素一定，子元素为多行内联文本：设置父元素的display:table-cell或inline-block，再设置vertical-align:middle;</a></li>
+			<li><a href="#v3">块状元素:设置子元素position:absolute;并设置top、bottom为0，父元素要设置定位为static以外的值，margin:auto;</a></li>
+			<li><a href="#v4">通用方案: flex布局，给父元素设置{display:flex; align-items:center;}。</a></li>
+		</ul>
+		</li>
+	</ul>
+	<hr>
+	<h3>水平居中</h3>
+	<p id="h1">1.单行行内元素水平居中</p>
+	<pre>
+		.h_center_parent_1{
+			border: 1px solid #ccc;
+			width: 600px;
+			text-align: center;
+		}
+
+	</pre>
+	<p>效果：</p>
+	<div class="h_center_parent_1">
+		<span class="h_center_child_1">
+			我是内联文本(单行)，我是通过父元素的text-align居中的。
+		</span>
+	</div>
+	<br>
+	<p>对于内联多行文本此种处理方式无效</p>
+	<div class="h_center_parent_1">
+		<span class="h_center_child_1">
+			我是内联文本(多行)，我是通过父元素的text-align居中的。若我特别长呢，像这么长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长
+		</span>
+	</div>
+
+	<p id="h2">2.定宽块状元素水平居中</p>
+	<pre>
+		.h_center_parent_2{
+			border: 1px solid #ccc;
+			width: 600px;
+			padding: 10px;
+		}
+		.h_center_child_2{
+			width: 300px;
+			margin: 0 auto;
+			background: #e8e8e8;
+		}
+	</pre>
+	<p>效果：</p>
+	<div class="h_center_parent_2">
+		<div class="h_center_child_2">
+			我是定宽的块状元素
+		</div>
+	</div>
+	<p id="h3">3.不定宽块状元素水平居中</p>
+	<pre>
+		.h_center_parent_3{
+			border: 1px solid #ccc;
+			width: 600px;
+			padding: 10px;
+			text-align: center;
+		}
+		.h_center_child_3{
+			display: inline;
+			background: #e8e8e8;
+		}
+	</pre>
+	<div class="h_center_parent_3">
+		<div class="h_center_child_3">
+			我是不定宽的块状元素
+		</div>
+	</div>
+	<br>
+	<div class="h_center_parent_3">
+		<div class="h_center_child_3">
+			我是不定宽的块状元素，不信，你看我加几个字试试
+		</div>
+	</div>
+	<p id="h4">4.flex解决方案</p>
+	<pre>
+		.h_center_parent_4{
+			border: 1px solid #ccc;
+			display: flex;
+			justify-content: center;
+		}
+	</pre>
+	<div class="h_center_parent_4">
+		<div class="h_center_child_4">
+			我是不定宽的块状元素，不信，你看我加几个字试试
+		</div>
+	</div>
+	<hr>
+	<h3>垂直居中</h3>
+	<p id="v1">1.父元素一定，子元素为单行内联文本</p>
+	<pre>
+		.v_center_parent_1{
+			border: 1px solid #ccc ;
+			width: 600px;
+			height: 100px;
+		}
+		.v_center_child_1{
+			line-height: 100px;
+		}
+	</pre>
+	<div class="v_center_parent_1">
+		<span class="v_center_child_1">
+			我是单行内联文本,我要垂直居中
+		</span>
+	</div>
+	<p id="v2">2.父元素一定，子元素为多行内联文本</p>
+	<pre>
+		.v_center_parent_2{
+			display: table-cell;//主要是这个配合下一项来起作用
+			vertical-align: middle;//
+			border: 1px solid #ccc ;
+			width: 600px;
+			height: 100px;
+		}
+		//display:inline-block;似乎不起作用
+	</pre>
+	<div class="v_center_parent_2">
+		<span class="v_center_child_2">
+			我是多行内联文本,我要垂直居中。我特别长呢，像这么长长长长长长长长长长长长长长长长长长长长长长长hahaha
+		</span>
+	</div>
+	<p>当里面内容足够长时</p>
+	<div class="v_center_parent_2">
+		<span class="v_center_child_2">
+			我是多行内联文本,我要垂直居中。我特别长呢，像这么长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长hahaha
+		</span>
+	</div>
+	<p>我要垂直和水平都居中1</p>
+	<pre>
+		.v_center_parent_2{
+			display: table-cell;
+			vertical-align: middle;
+			border: 1px solid #ccc ;
+			width: 600px;
+			height: 100px;
+		}
+		.test2{
+			display:block;
+			width:300px;
+			margin:0 auto;
+		}
+	</pre>
+	<div class="v_center_parent_2">
+		<span class="v_center_child_2 test2">
+			我是多行内联文本,我要垂直水平居中。我特别长呢，像这么长长长长长长长长长长长长长长长长长长长长长长......
+		</span>
+	</div>
+	<p>我要垂直和水平都居中2 <span style="color:red">(对比上一例子)</span></p>
+	<pre>
+		.v_center_parent_2{
+			display: table-cell;
+			vertical-align: middle;
+			border: 1px solid #ccc ;
+			width: 600px;
+			height: 100px;
+		}
+		.test{
+			text-align: center;
+		}
+		.test3{
+			display:inline-block;
+			/*display:block;*/
+			width:300px;
+			background: #e8e8e8;
+			/*text-align: left;*/
+			/* margin:0 auto; */
+		}
+	</pre>
+	<div class="v_center_parent_2 test">
+		<span class="v_center_child_2 test3">
+			我是多行内联文本,我要垂直居中。我特别长呢，像这么长长长长长长长长长长长长长长长长长长长长长长hahaha
+		</span>
+	</div>
+
+	<p>如果有一张图片呢</p>
+	<div class="v_center_parent_2">
+		<span class="v_center_child_2 fl">
+			我是多行内联文本,我要垂直居中。我特别长呢，像这么长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长hahaha
+		</span>
+		<img class="fl" width='30' height="30" src="http://img3.redocn.com/20120602/Redocn_2012060209091679.jpg" alt="">
+	</div>
+
+	<p id="v3">3.子元素为块状元素垂直居中</p>
+	<div class="v_center_parent_3">
+		<div class="v_center_child_3">
+			我是多行内联文本,我要垂直居中。我特别长呢，像这么长长长长长长长长长长长长长长长长长长长长长长hahaha
+		</div>
+	</div>
+
+
+	
+
+</body>
+</html>
