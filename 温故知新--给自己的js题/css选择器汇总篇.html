@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>css选择器汇总篇</title>
+	<style>
+	*{
+		padding: 0;
+		margin: 0;
+	}
+	pre{
+		margin: 20px 0;
+		border-left: 2px solid #ccc;
+		background: #e8e8e8;
+		padding: 20px;
+	}
+	h1{
+		margin-bottom: 40px;
+	}
+	body{
+		max-width: 900px;
+		margin: 0 auto;
+		font-family: "microsoft yahei";
+	}
+	strong{
+		color: red;
+	}
+	li{
+		list-style: none;
+		margin-bottom: 10px;
+	}
+	h3{
+		padding: 10px;
+		background: #e8e8e8;
+		margin: 20px 0;
+	}
+	ul{
+		padding: 20px;
+	}
+	.jiesi{
+		padding: 10px;
+		font-size: 12px;
+		color: green;
+	}
+	.nb~span{
+		color: green;
+	}
+	pre+div{
+		border: 1px solid #ccc;
+		padding: 20px;
+	}
+	a{
+		text-decoration: none;
+		color: inherit;
+	}
+	a:hover{
+		color: red;
+	}
+</style>
+
+</head>
+<body>
+	<h1>css选择器汇总篇</h1>
+	<h3>基本选择器</h3>
+	<ul>
+		<li>
+			1.元素选择器：<strong>elementname(元素名称)</strong>
+		</li>
+		<li>
+			2.类选择器：<strong>.classname(类名)</strong>
+		</li>
+		<li>
+			3.ID选择器：<strong>#idname("标志名")</strong>
+		</li>
+		<li>
+			4.通配选择器：<strong>*</strong>
+		</li>
+		<li>
+			5.属性选择器：<strong>[attr=value]</strong>
+		</li>
+	</ul>
+	<h3>组合选择器</h3>
+	<ul>
+		<li>
+			1.相邻兄弟选择器：<strong>A + B</strong>
+		</li>
+		<li>
+			<a href="#e1">2.普通兄弟选择器：<strong>A ~ B</strong></a>
+			<p class="jiesi">在使用 ~ 连接两个元素时,它会匹配第二个元素,条件是它必须跟(不一定是紧跟)在第一个元素之后,且他们都有一个共同的父元素 .</p>
+		</li>
+		<li>
+			3.子选择器：<strong>A > B</strong>
+		</li>
+		<li>
+			4.后代选择器：<strong> A B</strong>
+		</li>
+	</ul>
+	<h3>伪类选择器</h3>
+	<ul>
+		<li>
+			<strong>:active</strong>
+		</li>
+		<li>
+			<strong>:link</strong></a>
+		</li>
+		<li>
+			<strong>:visited</strong>
+		</li>
+		<li>
+			<strong>:hover</strong>
+		</li>
+		<li>
+			<strong>:checked</strong>
+		</li>
+		<li>
+			<strong>:empty</strong>
+		</li>
+		<li>
+			<strong>:enabled</strong>
+		</li>
+		<li>
+			<strong>:hover</strong>
+		</li>
+		<li>
+			<strong>:nth-child</strong>
+		</li>
+		<li>
+			<strong>:first-child</strong>
+		</li>
+		<li>
+			<strong>:last-child</strong>
+		</li>
+		<li>
+			<strong>:disabled</strong>
+		</li>
+		<li>
+			<strong>:focus</strong>
+		</li>
+		<li>
+			<strong>:valid</strong>
+			<p class="jiesi">参照<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:valid">MDN</a>，此选项有望干掉js表单验证</p>
+		</li>
+
+	</ul>
+
+	<hr>
+	<div class="example">
+		<p id="e1">普通兄弟选择器 A~B</p>
+		<pre>
+			.nb~span{
+				color: green;
+			}
+		</pre>
+		<div>
+			<span>我是前一个B</span>
+			<strong class="nb">我是那个A</strong>
+			<span>我是后一个B</span>
+			<span>我是后两个B</span>
+		</div>
+	</div>
+</body>
+</html>
+
+
+
+
