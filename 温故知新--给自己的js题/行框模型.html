@@ -4,31 +4,128 @@
 	<meta charset="UTF-8">
 	<title>行框知识点总结</title>
 	<style>
+
 		body{
 			background: url('images/rule_bg.png');
 			max-width: 900px;
 			margin: 0 auto ;
 			height: 100%;
+			padding-bottom: 300px;
 		}
 		.wrap p{
 			background: rgba(0, 0, 0, 0.2);
 			font-size: 30px;
 		}
+		.conclusion{
+			padding: 20px;
+			margin-bottom: 30px;
+			border: 2px solid #ccc;
+			font-size: 15px;
+			line-height: 2;
+			background: rgba(255, 255, 255,0.5);
+		}
+		strong{
+			color: red;
+		}
+		em{
+			padding: 60px; margin: 100px; background: rgba(233, 85, 85, 0.3);
+		}
+		.parent{
+		  line-height: 1;
+		  font-size: 14px;
+		 
+		  border: solid 1px yellow;
+		}
+		.child{
+		  font-size: 30px;
+		  vertical-align: middle;
+		 
+		  border: solid 1px blue;
+		}
+		.inline-block{
+		  display: inline-block;
+		  overflow: hidden;
+		 
+		  border: solid 1px red;
+		}
+		.other{
+		  border: solid 1px green;
+		}
+		.tag{
+			padding:5px 10px;
+			background: rgba(102, 194, 105, 0.5);
+			border-radius: 10px;
+		}
 	</style>
 </head>
 <body>
+	<div class="conclusion">
+		对于没有设置高度的元素，(单行)满足元素高度=字体大小*行高（即：height=(line-height)*(font-size)）;<br>
+		<strong>但是</strong>第三例其高度的数值是由什么确定？
+	</div>
 	<div class="wrap">
+	<!-- 1 -->
+	<span class="tag">默认行高：1.33</span>
 		<p>hello <span style="font-size: 1.5em;background: rgba(155,38,45,0.2);">world Google ABCDEFGabcdefg</span><img src="images/pic1.png" alt=""></p>
+	<!-- 2 -->
+	<span class="tag">默认行高：1.33</span>
 		<p><span> webkit默认行高为1.33 </span><span style="background: rgba(155,142,101,0.3);">不同字体其基线高度也不同</span></p>
-
-		<p style="line-height: 0.5">hello <span style="font-size: 1.5em;background: rgba(155,38,45,0.2);">world Google ABCDEFGabcdefg</span><img src="images/pic1.png" alt="">
+	<!-- 3 -->
+	<span class="tag">行高：0.5</span>
+		<p style="line-height: 0.5">hello <span style="font-size: 1.5em;background: rgba(155,38,45,0.2);">world Google ABCDEFGabcdefg</span>
 		<span>行高为0.5 </span><span style="background: rgba(155,142,101,0.3);">不同字体其基线高度也不同</span></p>
+	<!-- 3.1 -->
+	<span class="tag">行高：0.5</span>
+		<p style="line-height: 0.5">hello <span style="font-size: 1.5em;background: rgba(155,38,45,0.2);">world Google ABCDEFGabcdefg</span>
+		<!-- <span>行高为0.5 </span><span style="background: rgba(155,142,101,0.3);">不同字体其基线高度也不同</span> --></p>
+	<!-- 3.2 -->
+	<span class="tag">行高：1</span>
+		<p style="line-height: 1">hello <span style="font-size: 1.5em;background: rgba(155,38,45,0.2);">world Google ABCDEFGabcdefg</span>
+		<!-- <span>行高为0.5 </span><span style="background: rgba(155,142,101,0.3);">不同字体其基线高度也不同</span> --></p>
+		<!-- 3.2.1 -->
+	<span class="tag">行高：1,span:inline-block</span>
+	<p style="line-height: 1;/* vertical-align: top; *//* display: inline-block; */">hello <span style="display: inline-block;font-size: 1.5em;background: rgba(155,38,45,0.2);/* vertical-align: baseline; */">world Google ABCDEFGabcdefg</span>
+			<!-- <span>行高为0.5 </span><span style="background: rgba(155,142,101,0.3);">不同字体其基线高度也不同</span> --></p>
 
+	<!-- 3.3 -->
+	<span class="tag">行高：1</span>
+		<p style="line-height: 1"><span style="font-size: 1.5em;background: rgba(155,38,45,0.2);">world Google ABCDEFGabcdefg</span>
+		<!-- <span>行高为0.5 </span><span style="background: rgba(155,142,101,0.3);">不同字体其基线高度也不同</span> --></p>
+	<!-- 3.3 -->
+	<span class="tag">默认行高：1.33</span>
+		<p><span style="font-size: 1.5em;background: rgba(155,38,45,0.2);">world Google ABCDEFGabcdefg</span>
+		<!-- <span>行高为0.5 </span><span style="background: rgba(155,142,101,0.3);">不同字体其基线高度也不同</span> --></p>
+
+	<!-- 4 -->
+	<span class="tag">行高：0.5</span>
+		<p style="line-height: 0.5">hello <span >world Google ABCDEFGabcdefg</span>
+		<span>行高为0.5 </span><!-- <span style="background: rgba(155,142,101,0.3);">不同字体其基线高度也不同</span> --></p>
+	<!-- 4.1 -->
+	<span class="tag">行高：0.5</span>
+		<p style="line-height: 0.5">hello <span >world Google ABCDEFGabcdefg</span>
+		<span>行高为0.5 </span><span style="background: rgba(155,142,101,0.3);">不同字体其基线高度也不同</span></p>
+	
+	<!-- 5 -->
+	<span class="tag">默认行高：1.33</span>
 		<p>hello <span style="font-size: 1.5em;background: rgba(155,38,45,0.2);">world Google ABCDEFGabcdefg</span><img style="vertical-align: middle;" src="images/pic1.png" alt="">
 		<span> webkit默认行高为1.33 </span><span style="background: rgba(155,142,101,0.3);">不同字体其基线高度也不同</span></p>
-
+	<!-- 6 -->
+	<span class="tag">行高：2</span>
 		<p  style="line-height: 2">hello <span style="font-size: 1.5em;background: rgba(155,38,45,0.2);">world Google ABCDEFGabcdefg</span><img style="vertical-align: middle;" src="images/pic1.png" alt="">
 		<span> 行高为2 </span><span style="background: rgba(155,142,101,0.3);">不同字体其基线高度也不同</span></p>
 	</div>
+	<!-- 7 -->
+	<p style="background: rgba(0,0,0,0.5);width:100px;">Serveral <em>hengchang</em></p>hello
+	<!--8 -->
+	<p style="background: rgba(0,0,0,0.5);width:100px;">Serveral <em style="padding: 10px; margin: 10px; background: rgba(233, 85, 85, 0.3);">hengchanghengchanghengchang</em></p>hello
+	<!-- 9 -->
+	<span class="parent">
+	  <span class="child">
+	    <span class="inline-block">display:inline-block元素</span>
+	    xp子元素的文字
+	  </span>
+	  xp父元素的文字
+	</span>
+	<div class="other">其他元素</div>
 </body>
 </html>
