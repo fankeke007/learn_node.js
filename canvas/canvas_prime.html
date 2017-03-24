@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>canvas learning</title>
+	<link rel="stylesheet" type="text/css" href="css/canvas.css">
+</head>
+<body>
+<!-- 
+	canvas和img一样是一个可替代性元素，得用text-align居中
+ -->
+<h1 style="text-align: center;"><a href="http://cheatsheetworld.com/programming/html5-canvas-cheat-sheet/">canvas API 清单</a></h1>
+<hr>
+<div class="canvas_wrap">
+	<canvas id="canvas1"></canvas>
+</div>
+<hr>
+
+<script type="text/javascript">
+	function $(argument) {
+		return document.querySelector(argument);
+	}
+
+	var canvas1=$("#canvas1");
+	var ctx=canvas1.getContext("2d");
+	ctx.fillStyle='red';
+	ctx.fillRect(0,0,20,20);
+	ctx.fillRect(110,110,20,20);
+	ctx.strokeRect(50,50,20,20);
+	ctx.clearRect(10,10,5,5);
+
+	var x=0;
+	var y=0;
+
+	ctx.beginPath();
+	ctx.strokeStyle='green';
+	ctx.moveTo(78,78);
+	ctx.lineTo(100,150);
+	ctx.lineTo(150,90);
+	ctx.lineTo(30,60);
+	ctx.closePath();
+	ctx.stroke();//closePath()位于stroke之前和之后
+	// ctx.closePath();
+	// ctx.fill();
+	
+	ctx.beginPath();
+	ctx.strokeStyle='yellow';
+	    ctx.arc(75,75,50,0,Math.PI*2,true); // 绘制
+	    // ctx.moveTo(110,75);
+	    ctx.arc(75,75,35,0,Math.PI,false);   // 口(顺时针)
+	    // ctx.moveTo(65,65);
+	    ctx.arc(60,65,5,0,Math.PI*2,true);  // 左眼
+	    // ctx.moveTo(95,65);
+	    ctx.arc(90,65,5,0,Math.PI*2,true);  // 右眼
+	    ctx.stroke();
+
+	setInterval(function(){
+		if(x>150||y>110){
+			return false;
+		}else{
+			ctx.fillRect(x,y,20,20);
+			x+=5;
+			y+=5;
+		}
+	},300)
+	
+	
+	function rect(params){
+
+	}
+</script>
+</body>
+</html>
