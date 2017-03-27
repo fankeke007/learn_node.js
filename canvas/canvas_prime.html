@@ -63,8 +63,19 @@
 		}
 	},300)
 	
+	// 绘制图像
+	var img=new Image();
+	img.src='img/flower.jpg';
+	img.onload=function(){
+		ctx.drawImage(img,1500,1500,300,150,0,0,300,150);
+		ctx.drawImage(img,1500,1500,300,150,200,100,300,150);
+
+	}
 	
 	function rect(params){
+
+	}
+	function generate_poster(imgurl1,imgurl2){
 
 	}
 </script>
