@@ -1,0 +1,47 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'D:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Users\\Administrator\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'start' ]
+2 info using npm@4.0.3
+3 info using node@v4.4.7
+4 verbose run-script [ 'prestart', 'start', 'poststart' ]
+5 info lifecycle webpack_learning@1.0.0~prestart: webpack_learning@1.0.0
+6 silly lifecycle webpack_learning@1.0.0~prestart: no script for prestart, continuing
+7 info lifecycle webpack_learning@1.0.0~start: webpack_learning@1.0.0
+8 verbose lifecycle webpack_learning@1.0.0~start: unsafe-perm in lifecycle true
+9 verbose lifecycle webpack_learning@1.0.0~start: PATH: C:\Users\Administrator\AppData\Roaming\npm\node_modules\npm\bin\node-gyp-bin;E:\xampp\htdocs\learn_node.js\nodejs\webpack_learning\node_modules\.bin;C:\Perl64\site\bin;C:\Perl64\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;D:\Program Files\nodejs\;F:\BaiduYunDownload\egrep;C:\Program Files\TortoiseGit\bin;D:\Program Files\Sublime Text 3;D:\Program Files\MongoDB\Server\3.2\bin;C:\Users\Administrator\AppData\Roaming\npm;D:\Program Files\Git\bin;E:\xampp\php
+10 verbose lifecycle webpack_learning@1.0.0~start: CWD: E:\xampp\htdocs\learn_node.js\nodejs\webpack_learning
+11 silly lifecycle webpack_learning@1.0.0~start: Args: [ '/d /s /c', 'webpack-dev-server --hot --inline' ]
+12 silly lifecycle webpack_learning@1.0.0~start: Returned: code: 3221225786  signal: null
+13 info lifecycle webpack_learning@1.0.0~start: Failed to exec start script
+14 verbose stack Error: webpack_learning@1.0.0 start: `webpack-dev-server --hot --inline`
+14 verbose stack Exit status 3221225786
+14 verbose stack     at EventEmitter.<anonymous> (C:\Users\Administrator\AppData\Roaming\npm\node_modules\npm\lib\utils\lifecycle.js:279:16)
+14 verbose stack     at emitTwo (events.js:87:13)
+14 verbose stack     at EventEmitter.emit (events.js:172:7)
+14 verbose stack     at ChildProcess.<anonymous> (C:\Users\Administrator\AppData\Roaming\npm\node_modules\npm\lib\utils\spawn.js:40:14)
+14 verbose stack     at emitTwo (events.js:87:13)
+14 verbose stack     at ChildProcess.emit (events.js:172:7)
+14 verbose stack     at maybeClose (internal/child_process.js:827:16)
+14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
+15 verbose pkgid webpack_learning@1.0.0
+16 verbose cwd E:\xampp\htdocs\learn_node.js\nodejs\webpack_learning
+17 error Windows_NT 6.1.7601
+18 error argv "D:\\Program Files\\nodejs\\node.exe" "C:\\Users\\Administrator\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js" "start"
+19 error node v4.4.7
+20 error npm  v4.0.3
+21 error code ELIFECYCLE
+22 error webpack_learning@1.0.0 start: `webpack-dev-server --hot --inline`
+22 error Exit status 3221225786
+23 error Failed at the webpack_learning@1.0.0 start script 'webpack-dev-server --hot --inline'.
+23 error Make sure you have the latest version of node.js and npm installed.
+23 error If you do, this is most likely a problem with the webpack_learning package,
+23 error not with npm itself.
+23 error Tell the author that this fails on your system:
+23 error     webpack-dev-server --hot --inline
+23 error You can get information on how to open an issue for this project with:
+23 error     npm bugs webpack_learning
+23 error Or if that isn't available, you can get their info via:
+23 error     npm owner ls webpack_learning
+23 error There is likely additional logging output above.
+24 verbose exit [ 1, true ]

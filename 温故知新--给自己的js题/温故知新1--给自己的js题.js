@@ -7,7 +7,7 @@
 		var a=3;
 		foo();
 	}
-	//若bar()在这里执行是什么结果
+	//若bar()在这里执行是什么结果(undefined)
 	var a=2;//若此处a没定义则ReferenceError错误
 	bar();//函数执行结果2
 2.IIFE是什么？机制？优缺点？典型应用场景？
